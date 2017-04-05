@@ -220,6 +220,7 @@
 				TargetAttributes = {
 					265F59091E8F492300B88CA6 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = GMLKLDG682;
 						ProvisioningStyle = Automatic;
 					};
 					265F59221E8F492400B88CA6 = {
@@ -440,9 +441,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GMLKLDG682;
 				INFOPLIST_FILE = WZZDeveloperCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZDeveloperCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.normal2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -451,9 +453,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GMLKLDG682;
 				INFOPLIST_FILE = WZZDeveloperCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.WZZDeveloperCalculator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.normal2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

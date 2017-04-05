@@ -104,32 +104,75 @@ static WZZCalModel * model;
 }
 
 - (NSString *)handleText:(NSString *)text {
-    if (_currentCalPad == _calPad10) {
-        for (int i = 0; i < 10; i++) {
-            if ([text isEqualToString:[NSString stringWithFormat:@"%d", i]]) {
-                return text;
-            }
-        }
-    } else if (_currentCalPad == _calPad2) {
-        for (int i = 0; i < 2; i++) {
-            if ([text isEqualToString:[NSString stringWithFormat:@"%d", i]]) {
-                return text;
-            }
-        }
-    } else if (_currentCalPad == _calPad8) {
-        for (int i = 0; i < 8; i++) {
-            if ([text isEqualToString:[NSString stringWithFormat:@"%d", i]]) {
-                return text;
-            }
-        }
-    } else if (_currentCalPad == _calPad16) {
-        for (int i = 0; i < 16; i++) {
-            if ([text isEqualToString:[NSString stringWithFormat:@"%d", i]]) {
-                return text;
-            }
-        }
+    //清空
+    if ([text isEqualToString:@"AC"]) {
+        _currentNum = @"0";
+        return @"0";
     }
     
+    //数字
+    if (_currentCalPad == _calPad10) {
+        //输入数字
+        [self handleTextNumber:text up:10];
+    } else if (_currentCalPad == _calPad2) {
+        //输入数字
+        [self handleTextNumber:text up:2];
+    } else if (_currentCalPad == _calPad8) {
+        //输入数字
+        [self handleTextNumber:text up:8];
+    } else if (_currentCalPad == _calPad16) {
+        //输入数字
+        [self handleTextNumber:text up:10];
+    }
+    
+    return @"";
+}
+
+- (NSString *)handleTextNumber:(NSString *)text up:(int)up {
+    //输入数字
+    for (int i = 0; i < up; i++) {
+        if ([text isEqualToString:[NSString stringWithFormat:@"%d", i]]) {
+            text = [NSString stringWithFormat:@"%@%@", _currentNum.integerValue?_currentNum:@"", text];
+            _currentNum = text;
+            return text;
+        }
+    }
+    //没找到
+    switch ([text characterAtIndex:0]) {
+        case 'A':
+        {
+#warning 该写判断16位的文字的了
+        }
+            break;
+        case 'B':
+        {
+            
+        }
+            break;
+        case 'C':
+        {
+            
+        }
+            break;
+        case 'D':
+        {
+            
+        }
+            break;
+        case 'E':
+        {
+            
+        }
+            break;
+        case 'F':
+        {
+            
+        }
+            break;
+            
+        default:
+            break;
+    }
     return @"";
 }
 

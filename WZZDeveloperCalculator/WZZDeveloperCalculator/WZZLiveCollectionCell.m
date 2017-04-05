@@ -19,7 +19,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.backgroundColor = [UIColor colorWithRed:1.0f green:0.75f blue:0.0f alpha:1.0f];
+    self.backgroundColor = [UIColor colorWithRed:0.97f green:0.55f blue:0.16f alpha:1.0f];
 }
 
 - (void)setDataDic:(NSDictionary *)dataDic {

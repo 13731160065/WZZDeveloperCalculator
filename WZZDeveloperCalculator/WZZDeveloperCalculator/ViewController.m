@@ -17,7 +17,7 @@
 #define ITEMW ((kScreenWidth-(ITEMNUM-1)*ITEMBORDER)/ITEMNUM)
 #define ITEMH ITEMW
 
-#define YELLOWCOLOR [UIColor colorWithRed:1.0f green:0.75f blue:0.0f alpha:1.0f]
+#define YELLOWCOLOR [UIColor colorWithRed:0.97f green:0.55f blue:0.16f alpha:1.0f]
 
 @interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
