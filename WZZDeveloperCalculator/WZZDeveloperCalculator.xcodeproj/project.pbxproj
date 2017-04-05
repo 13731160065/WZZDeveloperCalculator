@@ -523,6 +523,7 @@
 				265F59391E8F492400B88CA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		265F593A1E8F492400B88CA6 /* Build configuration list for PBXNativeTarget "WZZDeveloperCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +532,7 @@
 				265F593C1E8F492400B88CA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		265F593D1E8F492400B88CA6 /* Build configuration list for PBXNativeTarget "WZZDeveloperCalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +541,7 @@
 				265F593F1E8F492400B88CA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

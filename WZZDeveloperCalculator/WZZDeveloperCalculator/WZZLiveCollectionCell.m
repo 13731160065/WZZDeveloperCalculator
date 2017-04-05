@@ -17,6 +17,11 @@
 
 @implementation WZZLiveCollectionCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.backgroundColor = [UIColor colorWithRed:1.0f green:0.75f blue:0.0f alpha:1.0f];
+}
+
 - (void)setDataDic:(NSDictionary *)dataDic {
     _dataDic = dataDic;
     NSString * title = _dataDic[@"title"];

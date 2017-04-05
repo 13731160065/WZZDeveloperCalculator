@@ -16,6 +16,7 @@
 @property (strong, nonatomic, readonly) NSMutableArray * calPad16;
 @property (strong, nonatomic, readonly) NSMutableArray * currentCalPad;
 @property (strong, nonatomic, readonly) NSMutableArray * padsArr;
+@property (strong, nonatomic) NSString * currentNum;
 
 + (instancetype)shareInstance;
 - (NSString *)handleText:(NSString *)text;
