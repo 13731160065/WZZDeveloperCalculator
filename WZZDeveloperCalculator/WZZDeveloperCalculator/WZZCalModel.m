@@ -38,6 +38,53 @@ static WZZCalModel * model;
              ];
 }
 
+#pragma mark - 改变键盘时的操作
+//变成16
+- (void)changeCurrentNumberTo16 {
+    if (_currentCalPad == _calPad2) {
+        _currentNum = [self change16From10:[self change10From2:_currentNum]];
+    } else if (_currentCalPad == _calPad8) {
+        _currentNum = [self change16From10:[self change10From8:_currentNum]];
+    } else if (_currentCalPad == _calPad10) {
+        _currentNum = [self change16From10:_currentNum];
+    }
+}
+
+//变成10
+- (void)changeCurrentNumberTo10 {
+    if (_currentCalPad == _calPad2) {
+        _currentNum = [self change10From2:_currentNum];
+    } else if (_currentCalPad == _calPad8) {
+        _currentNum = [self change10From8:_currentNum];
+    } else if (_currentCalPad == _calPad16) {
+        _currentNum = [self change10From16:_currentNum];
+    }
+}
+
+//变成8
+- (void)changeCurrentNumberTo8 {
+    if (_currentCalPad == _calPad2) {
+        _currentNum = [self change8From10:[self change10From2:_currentNum]];
+    } else if (_currentCalPad == _calPad16) {
+        _currentNum = [self change8From10:[self change10From16:_currentNum]];
+    } else if (_currentCalPad == _calPad10) {
+        _currentNum = [self change8From10:_currentNum];
+    }
+}
+
+//变成2
+- (void)changeCurrentNumberTo2 {
+    if (_currentCalPad == _calPad8) {
+        _currentNum = [self change2From10:[self change10From8:_currentNum]];
+    } else if (_currentCalPad == _calPad10) {
+        _currentNum = [self change2From10:_currentNum];
+    } else if (_currentCalPad == _calPad16) {
+        _currentNum = [self change2From10:[self change10From16:_currentNum]];
+    }
+}
+
+#pragma mark - 获取键盘
+//键盘10
 - (NSMutableArray *)calPad10 {
     if (!_calPad10) {
         _calPad10 = [NSMutableArray array];
@@ -51,9 +98,11 @@ static WZZCalModel * model;
         [_calPad10 addObjectsFromArray:[self normalHandlePad]];
     }
     _currentCalPad = _calPad10;
+    [self changeCurrentNumberTo10];
     return _calPad10;
 }
 
+//键盘2
 - (NSMutableArray *)calPad2 {
     if (!_calPad2) {
         _calPad2 = [NSMutableArray array];
@@ -71,9 +120,11 @@ static WZZCalModel * model;
         [_calPad2 addObjectsFromArray:[self normalHandlePad]];
     }
     _currentCalPad = _calPad2;
+    [self changeCurrentNumberTo2];
     return _calPad2;
 }
 
+//键盘8
 - (NSMutableArray *)calPad8 {
     if (!_calPad8) {
         _calPad8 = [NSMutableArray array];
@@ -84,9 +135,11 @@ static WZZCalModel * model;
         [_calPad8 addObjectsFromArray:[self normalHandlePad]];
     }
     _currentCalPad = _calPad8;
+    [self changeCurrentNumberTo8];
     return _calPad8;
 }
 
+//键盘16
 - (NSMutableArray *)calPad16 {
     if (!_calPad16) {
         _calPad16 = [NSMutableArray array];
@@ -100,9 +153,11 @@ static WZZCalModel * model;
         [_calPad16 addObjectsFromArray:[self normalHandlePad]];
     }
     _currentCalPad = _calPad16;
+    [self changeCurrentNumberTo16];
     return _calPad16;
 }
 
+#pragma mark - 处理文本
 //处理文本
 - (NSString *)handleText:(NSString *)text {
     //清空
@@ -168,8 +223,14 @@ static WZZCalModel * model;
             case '<':
             case '>':
         {
-            _op = text;
-            _currentNum = _d1;
+            if (!_d2) {
+                _op = text;
+                _d1 = _currentNum;
+                _currentNum = @"0";
+            } else {
+                return _d2;
+            }
+            return _d1;
         }
             break;
             
@@ -193,17 +254,44 @@ static WZZCalModel * model;
     switch ([_op characterAtIndex:0]) {
             case '+':
         {
-#warning 计算
+            NSString * answer = @([self numberTo10:_d1].integerValue+[self numberTo10:_d2].integerValue).stringValue;
+            if (_currentCalPad == _calPad2) {
+                _currentNum = [self change2From10:answer];
+            } else if (_currentCalPad == _calPad8) {
+                _currentNum = [self change8From10:answer];
+            } else if (_currentCalPad == _calPad16) {
+                _currentNum = [self change16From10:answer];
+            } else if (_currentCalPad == _calPad10) {
+                _currentNum = answer;
+            }
         }
             break;
             case '-':
         {
-            
+            NSString * answer = @([self numberTo10:_d1].integerValue-[self numberTo10:_d2].integerValue).stringValue;
+            if (_currentCalPad == _calPad2) {
+                _currentNum = [self change2From10:answer];
+            } else if (_currentCalPad == _calPad8) {
+                _currentNum = [self change8From10:answer];
+            } else if (_currentCalPad == _calPad16) {
+                _currentNum = [self change16From10:answer];
+            } else if (_currentCalPad == _calPad10) {
+                _currentNum = answer;
+            }
         }
             break;
             case 'x':
         {
-            
+            NSString * answer = @([self numberTo10:_d1].integerValue*[self numberTo10:_d2].integerValue).stringValue;
+            if (_currentCalPad == _calPad2) {
+                _currentNum = [self change2From10:answer];
+            } else if (_currentCalPad == _calPad8) {
+                _currentNum = [self change8From10:answer];
+            } else if (_currentCalPad == _calPad16) {
+                _currentNum = [self change16From10:answer];
+            } else if (_currentCalPad == _calPad10) {
+                _currentNum = answer;
+            }
         }
             break;
             case '|':
@@ -236,12 +324,36 @@ static WZZCalModel * model;
         {
             if ([_op isEqualToString:@"÷"]) {
                 //除
-                
+                NSString * answer = @([self numberTo10:_d1].doubleValue/[self numberTo10:_d2].doubleValue).stringValue;
+                if (_currentCalPad == _calPad2) {
+                    _currentNum = [self change2From10:answer];
+                } else if (_currentCalPad == _calPad8) {
+                    _currentNum = [self change8From10:answer];
+                } else if (_currentCalPad == _calPad16) {
+                    _currentNum = [self change16From10:answer];
+                } else if (_currentCalPad == _calPad10) {
+                    _currentNum = answer;
+                }
             }
         }
             break;
     }
+    _d1 = _currentNum;
+    _d2 = nil;
+    _op = nil;
     return _currentNum;
+}
+
+//任何数变成10进制(根据当前选择的键盘来判断)
+- (NSString *)numberTo10:(NSString *)n {
+    if (_currentCalPad == _calPad2) {
+        n = [self change10From2:n];
+    } else if (_currentCalPad == _calPad8) {
+        n = [self change10From8:n];
+    } else if (_currentCalPad == _calPad16) {
+        n = [self change10From16:n];
+    }
+    return n;
 }
 
 #pragma mark - 进制转换

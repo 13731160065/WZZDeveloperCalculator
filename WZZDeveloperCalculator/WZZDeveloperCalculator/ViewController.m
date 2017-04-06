@@ -127,6 +127,7 @@
         default:
             break;
     }
+    [showLabel setText:[WZZCalModel shareInstance].currentNum];
     [mainCollectionView reloadData];
 }
 
