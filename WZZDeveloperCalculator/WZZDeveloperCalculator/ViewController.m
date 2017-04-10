@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "WZZLiveCollectionCell.h"
 #import "WZZCalModel.h"
+#import "WZZSelectView.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -38,6 +39,7 @@
     [self loadData];
 }
 
+//创建UI
 - (void)creatUI {
     [self.view setBackgroundColor:[UIColor colorWithWhite:0.1f alpha:1.0f]];
     dataArr = [NSMutableArray array];
@@ -55,6 +57,11 @@
     [showLabel setTextAlignment:NSTextAlignmentRight];
     [showLabel setTextColor:[UIColor whiteColor]];
     [showLabel setAdjustsFontSizeToFitWidth:YES];
+    [showLabel setUserInteractionEnabled:YES];
+    //添加手势
+    [showLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)]];
+    [showLabel addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longClick:)]];
+    [showLabel addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panClick:)]];
     
     //切换
     UIView * segView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(showLabel.frame), showView.frame.size.width, showView.frame.size.height-showLabel.frame.size.height)];
@@ -85,10 +92,12 @@
     [mainCollectionView registerNib:[UINib nibWithNibName:@"WZZLiveCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
 }
 
+//加载数据
 - (void)loadData {
     [self changeSegClick:buttonsArr[2]];
 }
 
+//键盘切换
 - (void)changeSegClick:(UIButton *)button {
     NSInteger index = button.tag-1000;
     [buttonsArr enumerateObjectsUsingBlock:^(UIButton * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -131,8 +140,31 @@
     [mainCollectionView reloadData];
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+#pragma mark - 点击事件
+//点击数字
+- (void)tapClick:(UITapGestureRecognizer *)tap {
+    //快速获取数字列表
+    WZZSelectView * view = [[WZZSelectView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(showView.frame), kScreenWidth, 200)];
+    [self.view addSubview:view];
+    [view selectBlock:^(NSString *selectStr) {
+        if ([selectStr isEqualToString:@"当前时间戳"]) {
+#warning wzz该写这了，根据条件获取时间戳
+        }
+    }];
+}
+
+//长按数字
+- (void)longClick:(UILongPressGestureRecognizer *)longGes {
+    //复制
+    [showLabel setText:[WZZCalModel copyWithText:[WZZCalModel shareInstance].currentNum]];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [showLabel setText:[WZZCalModel shareInstance].currentNum];
+    });
+}
+
+//拖拽数字
+- (void)panClick:(UIPanGestureRecognizer *)pan {
+    
 }
 
 #pragma mark - collection代理
@@ -169,5 +201,9 @@
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }
 
+#pragma mark - 其他
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 
 @end

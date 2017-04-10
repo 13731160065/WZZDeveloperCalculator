@@ -7,6 +7,7 @@
 //
 
 #import "WZZCalModel.h"
+@import UIKit;
 
 #warning wzz算小数有问题
 
@@ -477,6 +478,17 @@ static WZZCalModel * model;
         bbb += ([str characterAtIndex:i]-'0')*pow(16, str.length-i-1);
     }
     return bbb;
+}
+
+//复制文字
++ (NSString *)copyWithText:(NSString *)text {
+    UIPasteboard *pab = [UIPasteboard generalPasteboard];
+    [pab setString:text];
+    if (pab == nil) {
+        return @"复制失败";
+    } else {
+        return @"已复制";
+    }
 }
 
 @end

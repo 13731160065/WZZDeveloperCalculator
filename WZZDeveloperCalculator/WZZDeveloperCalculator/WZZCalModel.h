@@ -70,4 +70,14 @@
  */
 - (NSString *)handleText:(NSString *)text;
 
+/**
+ 复制
+ */
++ (NSString *)copyWithText:(NSString *)text;
+
+/**
+ 获取当前时间戳
+ */
+
+
 @end
