@@ -8,6 +8,8 @@
 
 #import "WZZCalModel.h"
 
+#warning wzz算小数有问题
+
 static WZZCalModel * model;
 
 @interface WZZCalModel () {
@@ -97,8 +99,8 @@ static WZZCalModel * model;
         //+-x÷=
         [_calPad10 addObjectsFromArray:[self normalHandlePad]];
     }
-    _currentCalPad = _calPad10;
     [self changeCurrentNumberTo10];
+    _currentCalPad = _calPad10;
     return _calPad10;
 }
 
@@ -119,8 +121,8 @@ static WZZCalModel * model;
                                         ]];
         [_calPad2 addObjectsFromArray:[self normalHandlePad]];
     }
-    _currentCalPad = _calPad2;
     [self changeCurrentNumberTo2];
+    _currentCalPad = _calPad2;
     return _calPad2;
 }
 
@@ -134,8 +136,8 @@ static WZZCalModel * model;
         }
         [_calPad8 addObjectsFromArray:[self normalHandlePad]];
     }
-    _currentCalPad = _calPad8;
     [self changeCurrentNumberTo8];
+    _currentCalPad = _calPad8;
     return _calPad8;
 }
 
@@ -152,8 +154,8 @@ static WZZCalModel * model;
         }
         [_calPad16 addObjectsFromArray:[self normalHandlePad]];
     }
-    _currentCalPad = _calPad16;
     [self changeCurrentNumberTo16];
+    _currentCalPad = _calPad16;
     return _calPad16;
 }
 
@@ -167,10 +169,6 @@ static WZZCalModel * model;
         _op = nil;
         _currentNum = @"0";
         return _currentNum;
-    } else if ([text isEqualToString:@"÷"]) {
-        _op = text;
-        _currentNum = _d1;
-        return _currentNum;
     }
     
     //数字/运算符
@@ -183,22 +181,22 @@ static WZZCalModel * model;
     switch ([text characterAtIndex:0])
     {
             //数字
-            case '0':
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
-            case '6':
-            case '7':
-            case '8':
-            case '9':
-            case 'A':
-            case 'B':
-            case 'C':
-            case 'D':
-            case 'E':
-            case 'F':
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+        case 'A':
+        case 'B':
+        case 'C':
+        case 'D':
+        case 'E':
+        case 'F':
         {
             text = [NSString stringWithFormat:@"%@%@", _currentNum.integerValue?_currentNum:@"", text];
             if (!_op) {
@@ -214,35 +212,55 @@ static WZZCalModel * model;
             break;
             
             //运算符
-            case '+':
-            case '-':
-            case 'x':
-            case '|':
-            case '&':
-            case '!':
-            case '<':
-            case '>':
+        case '+':
+        case '-':
+        case 'x':
+        case '|':
+        case '&':
+        case '<':
+        case '>':
+        case '^':
         {
             if (!_d2) {
                 _op = text;
                 _d1 = _currentNum;
                 _currentNum = @"0";
+                return _d1;
             } else {
                 return _d2;
             }
-            return _d1;
         }
             break;
             
             //等
-            case '=':
+        case '=':
         {
             _currentNum = [self startCal];
         }
+            break;
+        case '!':
+        {
+            if (_d1) {
+                _op = @"!";
+                _d2 = nil;
+                _currentNum = [self startCal];
+            }
+        }
+            break;
             
         default:
         {
-            
+            if ([text isEqualToString:@"÷"]) {
+                //除
+                if (!_d2) {
+                    _op = text;
+                    _d1 = _currentNum;
+                    _currentNum = @"0";
+                    return _d1;
+                } else {
+                    return _d2;
+                }
+            }
         }
             break;
     }
@@ -252,71 +270,59 @@ static WZZCalModel * model;
 //开始计算
 - (NSString *)startCal {
     switch ([_op characterAtIndex:0]) {
-            case '+':
+        case '+':
         {
             NSString * answer = @([self numberTo10:_d1].integerValue+[self numberTo10:_d2].integerValue).stringValue;
-            if (_currentCalPad == _calPad2) {
-                _currentNum = [self change2From10:answer];
-            } else if (_currentCalPad == _calPad8) {
-                _currentNum = [self change8From10:answer];
-            } else if (_currentCalPad == _calPad16) {
-                _currentNum = [self change16From10:answer];
-            } else if (_currentCalPad == _calPad10) {
-                _currentNum = answer;
-            }
+            _currentNum = [self handleAnswer:answer];
         }
             break;
-            case '-':
+        case '-':
         {
             NSString * answer = @([self numberTo10:_d1].integerValue-[self numberTo10:_d2].integerValue).stringValue;
-            if (_currentCalPad == _calPad2) {
-                _currentNum = [self change2From10:answer];
-            } else if (_currentCalPad == _calPad8) {
-                _currentNum = [self change8From10:answer];
-            } else if (_currentCalPad == _calPad16) {
-                _currentNum = [self change16From10:answer];
-            } else if (_currentCalPad == _calPad10) {
-                _currentNum = answer;
-            }
+            _currentNum = [self handleAnswer:answer];
         }
             break;
-            case 'x':
+        case 'x':
         {
             NSString * answer = @([self numberTo10:_d1].integerValue*[self numberTo10:_d2].integerValue).stringValue;
-            if (_currentCalPad == _calPad2) {
-                _currentNum = [self change2From10:answer];
-            } else if (_currentCalPad == _calPad8) {
-                _currentNum = [self change8From10:answer];
-            } else if (_currentCalPad == _calPad16) {
-                _currentNum = [self change16From10:answer];
-            } else if (_currentCalPad == _calPad10) {
-                _currentNum = answer;
-            }
+            _currentNum = [self handleAnswer:answer];
         }
             break;
-            case '|':
+        case '|':
         {
-            
+            NSString * answer = @([self numberTo10:_d1].integerValue | [self numberTo10:_d2].integerValue).stringValue;
+            _currentNum = [self handleAnswer:answer];
         }
             break;
-            case '&':
+        case '&':
         {
-            
+            NSString * answer = @([self numberTo10:_d1].integerValue & [self numberTo10:_d2].integerValue).stringValue;
+            _currentNum = [self handleAnswer:answer];
         }
             break;
-            case '!':
+        case '!':
         {
-            
+#warning wzz取反暂时有问题
+            NSString * answer = @(~[self numberTo10:_d1].integerValue).stringValue;
+            _currentNum = [self handleAnswer:answer];
         }
             break;
-            case '<':
+        case '<':
         {
-            
+            NSString * answer = @([self numberTo10:_d1].integerValue<<[self numberTo10:_d2].integerValue).stringValue;
+            _currentNum = [self handleAnswer:answer];
         }
             break;
-            case '>':
+        case '>':
         {
-            
+            NSString * answer = @([self numberTo10:_d1].integerValue>>[self numberTo10:_d2].integerValue).stringValue;
+            _currentNum = [self handleAnswer:answer];
+        }
+            break;
+        case '^':
+        {
+            NSString * answer = @([self numberTo10:_d1].integerValue ^ [self numberTo10:_d2].integerValue).stringValue;
+            _currentNum = [self handleAnswer:answer];
         }
             break;
             
@@ -325,15 +331,7 @@ static WZZCalModel * model;
             if ([_op isEqualToString:@"÷"]) {
                 //除
                 NSString * answer = @([self numberTo10:_d1].doubleValue/[self numberTo10:_d2].doubleValue).stringValue;
-                if (_currentCalPad == _calPad2) {
-                    _currentNum = [self change2From10:answer];
-                } else if (_currentCalPad == _calPad8) {
-                    _currentNum = [self change8From10:answer];
-                } else if (_currentCalPad == _calPad16) {
-                    _currentNum = [self change16From10:answer];
-                } else if (_currentCalPad == _calPad10) {
-                    _currentNum = answer;
-                }
+                _currentNum = [self handleAnswer:answer];
             }
         }
             break;
@@ -342,6 +340,21 @@ static WZZCalModel * model;
     _d2 = nil;
     _op = nil;
     return _currentNum;
+}
+
+//处理结果
+- (NSString *)handleAnswer:(NSString *)answer {
+    NSString * answerR;
+    if (_currentCalPad == _calPad2) {
+        answerR = [self change2From10:answer];
+    } else if (_currentCalPad == _calPad8) {
+        answerR = [self change8From10:answer];
+    } else if (_currentCalPad == _calPad16) {
+        answerR = [self change16From10:answer];
+    } else if (_currentCalPad == _calPad10) {
+        answerR = answer;
+    }
+    return answerR;
 }
 
 //任何数变成10进制(根据当前选择的键盘来判断)

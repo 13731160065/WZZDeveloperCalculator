@@ -79,7 +79,7 @@
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc] init];
     mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(showView.frame), kScreenWidth, kScreenHeight-CGRectGetMaxY(showView.frame)) collectionViewLayout:layout];
     [self.view addSubview:mainCollectionView];
-    [mainCollectionView setBackgroundColor:[UIColor colorWithWhite:0.99f alpha:1.0f]];
+    [mainCollectionView setBackgroundColor:[UIColor colorWithWhite:0.1f alpha:1.0f]];
     [mainCollectionView setDataSource:self];
     [mainCollectionView setDelegate:self];
     [mainCollectionView registerNib:[UINib nibWithNibName:@"WZZLiveCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
