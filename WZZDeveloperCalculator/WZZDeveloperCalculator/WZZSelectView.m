@@ -38,7 +38,9 @@
         [backView.layer setMasksToBounds:YES];
         dataArr = [NSMutableArray arrayWithArray:@[
                                                    @"当前时间戳",
-                                                   @"JavaScript"
+                                                   @"JavaScript",
+                                                   @"随机数",
+                                                   @"随机数设置"
                                                    ]];
         mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, rect.size.height) style:UITableViewStylePlain];
         [backView addSubview:mainTableView];

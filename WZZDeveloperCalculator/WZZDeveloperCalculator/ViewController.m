@@ -10,6 +10,7 @@
 #import "WZZLiveCollectionCell.h"
 #import "WZZCalModel.h"
 #import "WZZSelectView.h"
+#import "JSViewController.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -149,6 +150,11 @@
             NSString * str = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
             [showLabel setText:[[WZZCalModel shareInstance] inputLongText:str]];
         } else if ([selectStr isEqualToString:@"JavaScript"]) {
+            JSViewController * jsss = [[JSViewController alloc] init];
+            [self presentViewController:jsss animated:YES completion:nil];
+        } else if ([selectStr isEqualToString:@"随机数"]) {
+            
+        } else if ([selectStr isEqualToString:@"随机数设置"]) {
             
         }
     }];

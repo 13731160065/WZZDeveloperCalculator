@@ -7,8 +7,13 @@
 //
 
 #import "JSViewController.h"
+#import "WZZSingleManager.h"
+@import UIKit;
 
-@interface JSViewController ()
+@interface JSViewController ()<UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet UIWebView *mainWebView;
+@property (weak, nonatomic) IBOutlet UITextView *mainTV;
+@property (weak, nonatomic) IBOutlet UIButton *goButton;
 
 @end
 
@@ -16,22 +21,77 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    //网页
+    NSString * hStr = [NSString stringWithFormat:@"<html>\
+                       <body>\
+                       欢迎使用; )<br/>\
+                       此处是一个网页<br/>\
+                       要输出内容到此处请使用<br/>\
+                       以下js方法:<br/>\
+                       document.write()<br/>\
+                       </body>\
+                       </html>"];
+    [_mainWebView loadHTMLString:hStr baseURL:nil];
+    [_mainWebView setBackgroundColor:[UIColor whiteColor]];
+    [_mainWebView setScalesPageToFit:YES];
+    
+    //输入框
+    [_mainTV setText:@"在此输入JS代码"];
+    [_mainTV setDelegate:self];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)inputJs:(NSString *)js {
+    NSString * hStr = [NSString stringWithFormat:@"<html>\
+                       <body>\
+                       <script>\
+                       %@\
+                       </script>\
+                       </body>\
+                       </html>", js];
+    [_mainWebView stringByEvaluatingJavaScriptFromString:js];
+    [_mainWebView loadHTMLString:hStr baseURL:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//执行
+- (IBAction)goClick:(id)sender {
+    [self inputJs:_mainTV.text];
 }
-*/
+
+//返回
+- (IBAction)backClick:(id)sender {
+    [_mainTV resignFirstResponder];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+//保存
+- (IBAction)saveClick:(id)sender {
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"请输入标题" message:@"注意:如果输入已保存过的代码标题，它将会覆盖掉你已经保存的代码" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"标题";
+    }];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[WZZSingleManager shareInstance] saveJsCode:_mainTV.text title:alert.textFields[0].text];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+//读取
+- (IBAction)loadClick:(id)sender {
+    
+}
+
+//触摸
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [_mainTV resignFirstResponder];
+}
+
+#pragma mark - textview代理
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:@"在此输入JS代码"]) {
+        [textView setText:@""];
+    }
+    return YES;
+}
 
 @end
