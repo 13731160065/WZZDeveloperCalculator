@@ -19,6 +19,8 @@
 		265F59431E8F4B2C00B88CA6 /* WZZLiveCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 265F59411E8F4B2C00B88CA6 /* WZZLiveCollectionCell.m */; };
 		265F59441E8F4B2C00B88CA6 /* WZZLiveCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 265F59421E8F4B2C00B88CA6 /* WZZLiveCollectionCell.xib */; };
 		265F59471E8F4C6000B88CA6 /* WZZCalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 265F59461E8F4C6000B88CA6 /* WZZCalModel.m */; };
+		26875FCB1EA5F17E00D3A85B /* JSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26875FC91EA5F17E00D3A85B /* JSViewController.m */; };
+		26875FCC1EA5F17E00D3A85B /* JSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26875FCA1EA5F17E00D3A85B /* JSViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,9 @@
 		265F59421E8F4B2C00B88CA6 /* WZZLiveCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZZLiveCollectionCell.xib; sourceTree = "<group>"; };
 		265F59451E8F4C6000B88CA6 /* WZZCalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZCalModel.h; sourceTree = "<group>"; };
 		265F59461E8F4C6000B88CA6 /* WZZCalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZCalModel.m; sourceTree = "<group>"; };
+		26875FC81EA5F17E00D3A85B /* JSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSViewController.h; sourceTree = "<group>"; };
+		26875FC91EA5F17E00D3A85B /* JSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSViewController.m; sourceTree = "<group>"; };
+		26875FCA1EA5F17E00D3A85B /* JSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,7 @@
 		265F590C1E8F492300B88CA6 /* WZZDeveloperCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				26875FC61EA5F11600D3A85B /* JS功能 */,
 				265F59101E8F492300B88CA6 /* AppDelegate.h */,
 				265F59111E8F492300B88CA6 /* AppDelegate.m */,
 				2647A4BF1E9B9349000482F4 /* WZZSelectView.h */,
@@ -156,6 +162,24 @@
 				265F59341E8F492400B88CA6 /* Info.plist */,
 			);
 			path = WZZDeveloperCalculatorUITests;
+			sourceTree = "<group>";
+		};
+		26875FC61EA5F11600D3A85B /* JS功能 */ = {
+			isa = PBXGroup;
+			children = (
+				26875FC71EA5F11600D3A85B /* ViewController */,
+			);
+			path = "JS功能";
+			sourceTree = "<group>";
+		};
+		26875FC71EA5F11600D3A85B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				26875FC81EA5F17E00D3A85B /* JSViewController.h */,
+				26875FC91EA5F17E00D3A85B /* JSViewController.m */,
+				26875FCA1EA5F17E00D3A85B /* JSViewController.xib */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +249,7 @@
 				TargetAttributes = {
 					265F59091E8F492300B88CA6 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = GMLKLDG682;
+						DevelopmentTeam = 4TGUD96RNM;
 						ProvisioningStyle = Automatic;
 					};
 					265F59221E8F492400B88CA6 = {
@@ -269,6 +293,7 @@
 				265F59441E8F4B2C00B88CA6 /* WZZLiveCollectionCell.xib in Resources */,
 				265F591A1E8F492300B88CA6 /* Assets.xcassets in Resources */,
 				265F59181E8F492300B88CA6 /* Main.storyboard in Resources */,
+				26875FCC1EA5F17E00D3A85B /* JSViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +321,7 @@
 				2647A4C11E9B9349000482F4 /* WZZSelectView.m in Sources */,
 				265F59151E8F492300B88CA6 /* ViewController.m in Sources */,
 				265F59431E8F4B2C00B88CA6 /* WZZLiveCollectionCell.m in Sources */,
+				26875FCB1EA5F17E00D3A85B /* JSViewController.m in Sources */,
 				265F59471E8F4C6000B88CA6 /* WZZCalModel.m in Sources */,
 				265F59121E8F492300B88CA6 /* AppDelegate.m in Sources */,
 				265F590F1E8F492300B88CA6 /* main.m in Sources */,
@@ -447,10 +473,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GMLKLDG682;
+				DEVELOPMENT_TEAM = 4TGUD96RNM;
 				INFOPLIST_FILE = WZZDeveloperCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.normal2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.normal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -459,10 +485,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = GMLKLDG682;
+				DEVELOPMENT_TEAM = 4TGUD96RNM;
 				INFOPLIST_FILE = WZZDeveloperCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.normal2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.normal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

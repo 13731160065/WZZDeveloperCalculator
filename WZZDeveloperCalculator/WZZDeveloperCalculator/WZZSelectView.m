@@ -13,25 +13,35 @@
     UITableView * mainTableView;
     NSMutableArray * dataArr;
     void(^_selectBlock)(NSString *);
+    UIView * backView;
+    CGRect oFrome;
 }
 
 @end
 
 @implementation WZZSelectView
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame rect:(CGRect)rect
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 0)];
+        oFrome = rect;
+        [self setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.0f]];
+        [self addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
+    
+        backView = [[UIView alloc] initWithFrame:CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, 0)];
+        [self addSubview:backView];
         [UIView animateWithDuration:0.3f animations:^{
-            [self setFrame:frame];
+            [self setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.5f]];
+            [backView setFrame:rect];
         }];
+        [backView.layer setMasksToBounds:YES];
         dataArr = [NSMutableArray arrayWithArray:@[
-                                                   @"当前时间戳"
+                                                   @"当前时间戳",
+                                                   @"JavaScript"
                                                    ]];
-        mainTableView = [[UITableView alloc] initWithFrame:self.bounds style:UITableViewStylePlain];
-        [self addSubview:mainTableView];
+        mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, rect.size.height) style:UITableViewStylePlain];
+        [backView addSubview:mainTableView];
         [mainTableView setDelegate:self];
         [mainTableView setDataSource:self];
         [mainTableView reloadData];
@@ -40,11 +50,26 @@
     return self;
 }
 
++ (void)showWithRect:(CGRect)rect selectBlock:(void (^)(NSString *))aBlock {
+    WZZSelectView * view = [[WZZSelectView alloc] initWithFrame:[UIScreen mainScreen].bounds rect:rect];
+    [view selectBlock:aBlock];
+    [[UIApplication sharedApplication].keyWindow addSubview:view];
+}
+
 //选择block
 - (void)selectBlock:(void (^)(NSString *))aBlock {
     if (_selectBlock != aBlock) {
         _selectBlock = aBlock;
     }
+}
+
+- (void)backClick {
+    [UIView animateWithDuration:0.3f animations:^{
+        [self setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.0f]];
+        [backView setFrame:CGRectMake(oFrome.origin.x, oFrome.origin.y, oFrome.size.width, 0)];
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+    }];
 }
 
 #pragma mark - tableview代理
@@ -63,7 +88,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [UIView animateWithDuration:0.3f animations:^{
-        [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, 0)];
+        [self setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.0f]];
+        [backView setFrame:CGRectMake(oFrome.origin.x, oFrome.origin.y, oFrome.size.width, 0)];
     } completion:^(BOOL finished) {
         if (_selectBlock) {
             _selectBlock(dataArr[indexPath.row]);

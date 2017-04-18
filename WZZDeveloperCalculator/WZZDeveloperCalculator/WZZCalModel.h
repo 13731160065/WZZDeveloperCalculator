@@ -76,8 +76,8 @@
 + (NSString *)copyWithText:(NSString *)text;
 
 /**
- 获取当前时间戳
+ 输入大串数字
  */
-
+- (NSString *)inputLongText:(NSString *)text;
 
 @end

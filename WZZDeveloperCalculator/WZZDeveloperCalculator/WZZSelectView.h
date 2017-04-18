@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WZZSelectView : UIView
+@interface WZZSelectView : UIButton
 
 /**
- 选择block
+ 显示
  */
-- (void)selectBlock:(void(^)(NSString * selectStr))aBlock;
++ (void)showWithRect:(CGRect)rect selectBlock:(void (^)(NSString * selectStr))aBlock;
 
 @end

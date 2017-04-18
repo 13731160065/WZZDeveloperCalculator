@@ -144,11 +144,12 @@
 //点击数字
 - (void)tapClick:(UITapGestureRecognizer *)tap {
     //快速获取数字列表
-    WZZSelectView * view = [[WZZSelectView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(showView.frame), kScreenWidth, 200)];
-    [self.view addSubview:view];
-    [view selectBlock:^(NSString *selectStr) {
+    [WZZSelectView showWithRect:CGRectMake(0, CGRectGetMaxY(showView.frame), kScreenWidth, 200) selectBlock:^(NSString * selectStr) {
         if ([selectStr isEqualToString:@"当前时间戳"]) {
-#warning wzz该写这了，根据条件获取时间戳
+            NSString * str = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
+            [showLabel setText:[[WZZCalModel shareInstance] inputLongText:str]];
+        } else if ([selectStr isEqualToString:@"JavaScript"]) {
+            
         }
     }];
 }

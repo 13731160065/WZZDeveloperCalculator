@@ -176,6 +176,19 @@ static WZZCalModel * model;
     return [self handleTextNumber:text];
 }
 
+- (NSString *)inputLongText:(NSString *)text {
+    if (_currentCalPad == _calPad2) {
+        text = [self change2From10:text];
+    } else if (_currentCalPad == _calPad8) {
+        text = [self change8From10:text];
+    } else if (_currentCalPad == _calPad16) {
+        text = [self change16From10:text];
+    } else if (_currentCalPad == _calPad10) {
+        text = text;
+    }
+    return [self handleTextNumber:text];
+}
+
 //处理
 - (NSString *)handleTextNumber:(NSString *)text {
     //输入数字
