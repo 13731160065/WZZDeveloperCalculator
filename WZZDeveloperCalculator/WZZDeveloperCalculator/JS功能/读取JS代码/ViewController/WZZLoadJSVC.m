@@ -74,7 +74,8 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [[WZZSingleManager shareInstance] removeJsCodeWithTitle:dataArr[indexPath.row]];
+        [[WZZSingleManager shareInstance] removeJsCodeWithTitle:dataArr[indexPath.row-1]];
+        [self loadData];
     }
 }
 

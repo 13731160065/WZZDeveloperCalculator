@@ -56,8 +56,12 @@ static WZZSingleManager * mm;
     
     //加载标题，删除符合的标题
     NSMutableArray * arr = [NSMutableArray arrayWithArray:[self loadJsTitle]];
-    [arr removeObject:[NSString stringWithFormat:@"js@%@", title]];
-    [[NSUserDefaults standardUserDefaults] setObject:[arr componentsJoinedByString:@","] forKey:JSCODEKEY];
+    [arr removeObject:[NSString stringWithFormat:@"%@", title]];
+    if (arr.count == 0) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:JSCODEKEY];
+    } else {
+        [[NSUserDefaults standardUserDefaults] setObject:[arr componentsJoinedByString:@","] forKey:JSCODEKEY];
+    }
 }
 
 //保存最大最小值
