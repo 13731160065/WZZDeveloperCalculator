@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+struct WZZMAXMINNUM {
+    NSInteger max;
+    NSInteger min;
+};
+
 @interface WZZSingleManager : NSObject
 
 /**
@@ -34,5 +39,15 @@
  删除js代码
  */
 - (void)removeJsCodeWithTitle:(NSString *)title;
+
+/**
+ 获取最大最小值
+ */
+- (struct WZZMAXMINNUM)loadMaxMinNum;
+
+/**
+ 保存最大最小值
+ */
+- (void)saveMaxMinNum:(struct WZZMAXMINNUM)maxMinNum;
 
 @end

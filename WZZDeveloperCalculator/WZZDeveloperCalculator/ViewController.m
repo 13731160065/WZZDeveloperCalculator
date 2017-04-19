@@ -10,6 +10,7 @@
 #import "WZZLiveCollectionCell.h"
 #import "WZZCalModel.h"
 #import "WZZSelectView.h"
+#import "WZZSingleManager.h"
 #import "JSViewController.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
@@ -153,9 +154,36 @@
             JSViewController * jsss = [[JSViewController alloc] init];
             [self presentViewController:jsss animated:YES completion:nil];
         } else if ([selectStr isEqualToString:@"随机数"]) {
-            
+            struct WZZMAXMINNUM nn = [[WZZSingleManager shareInstance] loadMaxMinNum];
+            NSInteger rNum = arc4random()%(nn.max-nn.min)+nn.min;
+            [showLabel setText:[[WZZCalModel shareInstance] inputLongText:@(rNum).stringValue]];
         } else if ([selectStr isEqualToString:@"随机数设置"]) {
-            
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"设置随机数" message:@"输入一个最大值和一个最小值，随机数将取包含这两个值极其中间值的随机数" preferredStyle:UIAlertControllerStyleAlert];
+            [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                textField.placeholder = @"最小值(整型)";
+                textField.keyboardType = UIKeyboardTypeNumberPad;
+            }];
+            [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                textField.placeholder = @"最大值(整型)";
+                textField.keyboardType = UIKeyboardTypeNumberPad;
+            }];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                NSInteger min = [alert.textFields[0].text integerValue];
+                NSInteger max = [alert.textFields[1].text integerValue];
+                if (max < min) {
+                    //如果大小反了，交换
+                    NSInteger tmp = max;
+                    max = min;
+                    min = tmp;
+                }
+                max++;
+                struct WZZMAXMINNUM nn;
+                nn.max = max;
+                nn.min = min;
+                [[WZZSingleManager shareInstance] saveMaxMinNum:nn];
+            }]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }];
 }

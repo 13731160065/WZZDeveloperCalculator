@@ -9,6 +9,8 @@
 #import "WZZSingleManager.h"
 
 #define JSCODEKEY @"jscodetitle"
+#define MINKEY @"MINKEY"
+#define MAXKEY @"MAXKEY"
 
 static WZZSingleManager * mm;
 
@@ -56,6 +58,25 @@ static WZZSingleManager * mm;
     NSMutableArray * arr = [NSMutableArray arrayWithArray:[self loadJsTitle]];
     [arr removeObject:[NSString stringWithFormat:@"js@%@", title]];
     [[NSUserDefaults standardUserDefaults] setObject:[arr componentsJoinedByString:@","] forKey:JSCODEKEY];
+}
+
+//保存最大最小值
+- (void)saveMaxMinNum:(struct WZZMAXMINNUM)maxMinNum {
+    [[NSUserDefaults standardUserDefaults] setInteger:maxMinNum.max forKey:MAXKEY];
+    [[NSUserDefaults standardUserDefaults] setInteger:maxMinNum.min forKey:MINKEY];
+}
+
+//加载最大最小值
+- (struct WZZMAXMINNUM)loadMaxMinNum {
+    struct WZZMAXMINNUM nnn;
+    NSInteger max = [[NSUserDefaults standardUserDefaults] integerForKey:MAXKEY];
+    NSInteger min = [[NSUserDefaults standardUserDefaults] integerForKey:MINKEY];
+    if (max == min) {
+        max++;
+    }
+    nnn.max = max;
+    nnn.min = min;
+    return nnn;
 }
 
 @end
