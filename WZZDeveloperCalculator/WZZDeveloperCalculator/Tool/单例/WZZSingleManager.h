@@ -30,4 +30,9 @@
  */
 - (NSString *)loadJsCodeWithTitle:(NSString *)title;
 
+/**
+ 删除js代码
+ */
+- (void)removeJsCodeWithTitle:(NSString *)title;
+
 @end

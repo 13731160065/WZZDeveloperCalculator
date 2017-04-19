@@ -8,6 +8,7 @@
 
 #import "JSViewController.h"
 #import "WZZSingleManager.h"
+#import "WZZLoadJSVC.h"
 @import UIKit;
 
 @interface JSViewController ()<UITextViewDelegate>
@@ -78,7 +79,11 @@
 
 //读取
 - (IBAction)loadClick:(id)sender {
-    
+    WZZLoadJSVC * jsvc = [[WZZLoadJSVC alloc] init];
+    [jsvc selectBackBlock:^(NSString *jsCode) {
+        _mainTV.text = [_mainTV.text stringByAppendingFormat:@"\n%@", jsCode];
+    }];
+    [self presentViewController:jsvc animated:YES completion:nil];
 }
 
 //触摸

@@ -10,4 +10,6 @@
 
 @interface WZZLoadJSVC : UIViewController
 
+- (void)selectBackBlock:(void(^)(NSString * jsCode))aBlock;
+
 @end

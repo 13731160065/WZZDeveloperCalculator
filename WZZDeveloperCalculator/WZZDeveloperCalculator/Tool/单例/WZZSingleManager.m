@@ -36,11 +36,26 @@ static WZZSingleManager * mm;
 //保存js代码
 - (void)saveJsCode:(NSString *)code title:(NSString *)title {
     [[NSUserDefaults standardUserDefaults] setObject:code forKey:[NSString stringWithFormat:@"js@%@", title]];
+    
+    //加载标题，往标题里加一个
+    NSMutableArray * arr = [NSMutableArray arrayWithArray:[self loadJsTitle]];
+    [arr addObject:[NSString stringWithFormat:@"js@%@", title]];
+    [[NSUserDefaults standardUserDefaults] setObject:[arr componentsJoinedByString:@","] forKey:JSCODEKEY];
 }
 
 //加载js代码
 - (NSString *)loadJsCodeWithTitle:(NSString *)title {
     return [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"js@%@", title]];
+}
+
+//删除js代码
+- (void)removeJsCodeWithTitle:(NSString *)title {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:[NSString stringWithFormat:@"js@%@", title]];
+    
+    //加载标题，删除符合的标题
+    NSMutableArray * arr = [NSMutableArray arrayWithArray:[self loadJsTitle]];
+    [arr removeObject:[NSString stringWithFormat:@"js@%@", title]];
+    [[NSUserDefaults standardUserDefaults] setObject:[arr componentsJoinedByString:@","] forKey:JSCODEKEY];
 }
 
 @end

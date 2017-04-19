@@ -22,8 +22,6 @@
 		26875FCB1EA5F17E00D3A85B /* JSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26875FC91EA5F17E00D3A85B /* JSViewController.m */; };
 		26875FCC1EA5F17E00D3A85B /* JSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26875FCA1EA5F17E00D3A85B /* JSViewController.xib */; };
 		26875FD31EA6186F00D3A85B /* WZZSingleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26875FD21EA6186F00D3A85B /* WZZSingleManager.m */; };
-		26875FD71EA61E4400D3A85B /* WZZRandomSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26875FD51EA61E4400D3A85B /* WZZRandomSettingVC.m */; };
-		26875FD81EA61E4400D3A85B /* WZZRandomSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26875FD61EA61E4400D3A85B /* WZZRandomSettingVC.xib */; };
 		26875FE51EA62F6D00D3A85B /* WZZLoadJSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26875FE31EA62F6D00D3A85B /* WZZLoadJSVC.m */; };
 		26875FE61EA62F6D00D3A85B /* WZZLoadJSVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26875FE41EA62F6D00D3A85B /* WZZLoadJSVC.xib */; };
 /* End PBXBuildFile section */
@@ -74,9 +72,6 @@
 		26875FCA1EA5F17E00D3A85B /* JSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSViewController.xib; sourceTree = "<group>"; };
 		26875FD11EA6186F00D3A85B /* WZZSingleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZSingleManager.h; sourceTree = "<group>"; };
 		26875FD21EA6186F00D3A85B /* WZZSingleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZSingleManager.m; sourceTree = "<group>"; };
-		26875FD41EA61E4400D3A85B /* WZZRandomSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZRandomSettingVC.h; sourceTree = "<group>"; };
-		26875FD51EA61E4400D3A85B /* WZZRandomSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZRandomSettingVC.m; sourceTree = "<group>"; };
-		26875FD61EA61E4400D3A85B /* WZZRandomSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZZRandomSettingVC.xib; sourceTree = "<group>"; };
 		26875FE21EA62F6D00D3A85B /* WZZLoadJSVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZLoadJSVC.h; sourceTree = "<group>"; };
 		26875FE31EA62F6D00D3A85B /* WZZLoadJSVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZLoadJSVC.m; sourceTree = "<group>"; };
 		26875FE41EA62F6D00D3A85B /* WZZLoadJSVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZZLoadJSVC.xib; sourceTree = "<group>"; };
@@ -131,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				26875FCF1EA6185E00D3A85B /* Tool */,
-				26875FCD1EA611D000D3A85B /* 随机数设置 */,
 				26875FC61EA5F11600D3A85B /* JS功能 */,
 				265F59101E8F492300B88CA6 /* AppDelegate.h */,
 				265F59111E8F492300B88CA6 /* AppDelegate.m */,
@@ -194,24 +188,6 @@
 				26875FC81EA5F17E00D3A85B /* JSViewController.h */,
 				26875FC91EA5F17E00D3A85B /* JSViewController.m */,
 				26875FCA1EA5F17E00D3A85B /* JSViewController.xib */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		26875FCD1EA611D000D3A85B /* 随机数设置 */ = {
-			isa = PBXGroup;
-			children = (
-				26875FCE1EA611D000D3A85B /* ViewController */,
-			);
-			path = "随机数设置";
-			sourceTree = "<group>";
-		};
-		26875FCE1EA611D000D3A85B /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				26875FD41EA61E4400D3A85B /* WZZRandomSettingVC.h */,
-				26875FD51EA61E4400D3A85B /* WZZRandomSettingVC.m */,
-				26875FD61EA61E4400D3A85B /* WZZRandomSettingVC.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -360,7 +336,6 @@
 			files = (
 				265F591D1E8F492300B88CA6 /* LaunchScreen.storyboard in Resources */,
 				265F59441E8F4B2C00B88CA6 /* WZZLiveCollectionCell.xib in Resources */,
-				26875FD81EA61E4400D3A85B /* WZZRandomSettingVC.xib in Resources */,
 				265F591A1E8F492300B88CA6 /* Assets.xcassets in Resources */,
 				26875FE61EA62F6D00D3A85B /* WZZLoadJSVC.xib in Resources */,
 				265F59181E8F492300B88CA6 /* Main.storyboard in Resources */,
@@ -397,7 +372,6 @@
 				265F59471E8F4C6000B88CA6 /* WZZCalModel.m in Sources */,
 				26875FD31EA6186F00D3A85B /* WZZSingleManager.m in Sources */,
 				265F59121E8F492300B88CA6 /* AppDelegate.m in Sources */,
-				26875FD71EA61E4400D3A85B /* WZZRandomSettingVC.m in Sources */,
 				265F590F1E8F492300B88CA6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
