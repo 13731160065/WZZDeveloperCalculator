@@ -150,6 +150,7 @@ static WZZSingleManager * mm;
     
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:pointFrame];
     [imageView setImage:[UIImage imageNamed:@"新卡包小手"]];
+    [imageView setContentMode:UIViewContentModeScaleAspectFit];
     [guideView addSubview:imageView];
 }
 
