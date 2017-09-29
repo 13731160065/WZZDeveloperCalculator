@@ -12,6 +12,7 @@
 #import "WZZSelectView.h"
 #import "WZZSingleManager.h"
 #import "JSViewController.h"
+#import "WZZWebVC.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -189,6 +190,9 @@
             }]];
             [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
             [self presentViewController:alert animated:YES completion:nil];
+        } else if ([selectStr isEqualToString:@"浏览器"]) {
+            WZZWebVC * vc = [[WZZWebVC alloc] init];
+            [self presentViewController:vc animated:YES completion:nil];
         }
     }];
 }

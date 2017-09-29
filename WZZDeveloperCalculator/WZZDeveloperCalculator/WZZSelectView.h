@@ -11,8 +11,13 @@
 @interface WZZSelectView : UIButton
 
 /**
- 显示
+ 显示，默认数据源
  */
 + (void)showWithRect:(CGRect)rect selectBlock:(void (^)(NSString * selectStr))aBlock;
+
+/**
+ 显示，带数据源
+ */
++ (void)showWithRect:(CGRect)rect dataArr:(NSArray *)dataArr selectBlock:(void (^)(NSString *))aBlock;
 
 @end

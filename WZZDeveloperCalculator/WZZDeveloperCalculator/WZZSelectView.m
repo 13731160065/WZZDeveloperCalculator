@@ -36,12 +36,6 @@
             [backView setFrame:rect];
         }];
         [backView.layer setMasksToBounds:YES];
-        dataArr = [NSMutableArray arrayWithArray:@[
-                                                   @"当前时间戳",
-                                                   @"JavaScript",
-                                                   @"随机数",
-                                                   @"随机数设置"
-                                                   ]];
         mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, rect.size.width, rect.size.height) style:UITableViewStylePlain];
         [backView addSubview:mainTableView];
         [mainTableView setDelegate:self];
@@ -53,8 +47,19 @@
 }
 
 + (void)showWithRect:(CGRect)rect selectBlock:(void (^)(NSString *))aBlock {
+    [self showWithRect:rect dataArr:@[
+                                      @"当前时间戳",
+                                      @"JavaScript",
+                                      @"随机数",
+                                      @"随机数设置",
+                                      @"浏览器"
+                                      ] selectBlock:aBlock];
+}
+
++ (void)showWithRect:(CGRect)rect dataArr:(NSArray *)dataArr selectBlock:(void (^)(NSString *))aBlock {
     WZZSelectView * view = [[WZZSelectView alloc] initWithFrame:[UIScreen mainScreen].bounds rect:rect];
     [view selectBlock:aBlock];
+    view->dataArr = [NSMutableArray arrayWithArray:dataArr];
     [[UIApplication sharedApplication].keyWindow addSubview:view];
 }
 
