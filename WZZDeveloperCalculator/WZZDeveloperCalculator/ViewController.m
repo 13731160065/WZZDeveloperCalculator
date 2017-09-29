@@ -2,7 +2,7 @@
 //  ViewController.m
 //  WZZDeveloperCalculator
 //
-//  Created by 舞蹈圈 on 17/4/1.
+//  Created by 王泽众 on 17/4/1.
 //  Copyright © 2017年 wzz. All rights reserved.
 //
 
@@ -39,6 +39,9 @@
     [super viewDidLoad];
     [self creatUI];
     [self loadData];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [[WZZSingleManager shareInstance] showGuide];
+    });
 }
 
 //创建UI
@@ -92,6 +95,8 @@
     [mainCollectionView setDataSource:self];
     [mainCollectionView setDelegate:self];
     [mainCollectionView registerNib:[UINib nibWithNibName:@"WZZLiveCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
+    [mainCollectionView setShowsVerticalScrollIndicator:NO];
+    [mainCollectionView setShowsHorizontalScrollIndicator:NO];
 }
 
 //加载数据

@@ -2,7 +2,7 @@
 //  WZZSingleManager.h
 //  WZZDeveloperCalculator
 //
-//  Created by 舞蹈圈 on 17/4/18.
+//  Created by 王泽众 on 17/4/18.
 //  Copyright © 2017年 wzz. All rights reserved.
 //
 
@@ -49,5 +49,20 @@ struct WZZMAXMINNUM {
  保存最大最小值
  */
 - (void)saveMaxMinNum:(struct WZZMAXMINNUM)maxMinNum;
+
+/**
+ 展示引导图
+ */
+- (void)showGuide;
+
+/**
+ 注册tip
+ */
+- (void)registerIsNewVersionWithType:(NSString *)type;
+
+/**
+ 检测tip
+ */
+- (BOOL)checkIsNewVersionWithType:(NSString *)type;
 
 @end

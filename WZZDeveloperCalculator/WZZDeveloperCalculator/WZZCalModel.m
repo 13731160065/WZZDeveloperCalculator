@@ -2,7 +2,7 @@
 //  WZZCalModel.m
 //  WZZDeveloperCalculator
 //
-//  Created by 舞蹈圈 on 17/4/1.
+//  Created by 王泽众 on 17/4/1.
 //  Copyright © 2017年 wzz. All rights reserved.
 //
 
@@ -212,7 +212,10 @@ static WZZCalModel * model;
         case 'E':
         case 'F':
         {
-            text = [NSString stringWithFormat:@"%@%@", _currentNum.integerValue?_currentNum:@"", text];
+            if (_currentNum && ![_currentNum isEqualToString:@"0"]) {
+                //如果是0
+                text = [NSString stringWithFormat:@"%@%@", _currentNum, text];
+            }
             if (!_op) {
                 //操作数1
                 _d1 = text;
@@ -316,9 +319,14 @@ static WZZCalModel * model;
             break;
         case '!':
         {
-#warning wzz取反暂时有问题
-            NSString * answer = @(~[self numberTo10:_d1].integerValue).stringValue;
-            _currentNum = [self handleAnswer:answer];
+            if (_currentCalPad == _calPad2) {
+                NSString * answer = @"";
+                NSString * num2 = _currentNum;
+                for (int i = 0; i < num2.length; i++) {
+                    answer = [answer stringByAppendingFormat:@"%d", !([num2 characterAtIndex:i]-'0')];
+                }
+                _currentNum = answer;
+            }
         }
             break;
         case '<':
