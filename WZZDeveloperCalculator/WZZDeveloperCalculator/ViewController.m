@@ -153,17 +153,28 @@
 - (void)tapClick:(UITapGestureRecognizer *)tap {
     //快速获取数字列表
     [WZZSelectView showWithRect:CGRectMake(0, CGRectGetMaxY(showView.frame), kScreenWidth, 200) selectBlock:^(NSString * selectStr) {
+        
+        //时间戳
         if ([selectStr isEqualToString:@"当前时间戳"]) {
             NSString * str = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
             [showLabel setText:[[WZZCalModel shareInstance] inputLongText:str]];
-        } else if ([selectStr isEqualToString:@"JavaScript"]) {
+        }
+        
+        //js
+        if ([selectStr isEqualToString:@"JavaScript"]) {
             JSViewController * jsss = [[JSViewController alloc] init];
             [self presentViewController:jsss animated:YES completion:nil];
-        } else if ([selectStr isEqualToString:@"随机数"]) {
+        }
+        
+        //随机数
+        if ([selectStr isEqualToString:@"随机数"]) {
             struct WZZMAXMINNUM nn = [[WZZSingleManager shareInstance] loadMaxMinNum];
             NSInteger rNum = arc4random()%(nn.max-nn.min)+nn.min;
             [showLabel setText:[[WZZCalModel shareInstance] inputLongText:@(rNum).stringValue]];
-        } else if ([selectStr isEqualToString:@"随机数设置"]) {
+        }
+        
+        //随机数设置
+        if ([selectStr isEqualToString:@"随机数设置"]) {
             UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"设置随机数" message:@"输入一个最大值和一个最小值，随机数将取包含这两个值极其中间值的随机数" preferredStyle:UIAlertControllerStyleAlert];
             [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
                 textField.placeholder = @"最小值(整型)";
@@ -190,9 +201,17 @@
             }]];
             [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
             [self presentViewController:alert animated:YES completion:nil];
-        } else if ([selectStr isEqualToString:@"浏览器"]) {
+        }
+        
+        //浏览器
+        if ([selectStr isEqualToString:@"浏览器"]) {
             WZZWebVC * vc = [[WZZWebVC alloc] init];
             [self presentViewController:vc animated:YES completion:nil];
+        }
+        
+        //其他
+        if ([selectStr isEqualToString:@"其他"]) {
+            
         }
     }];
 }
