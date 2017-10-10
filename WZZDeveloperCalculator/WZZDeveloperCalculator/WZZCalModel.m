@@ -407,6 +407,9 @@ static WZZCalModel * model;
         if (aa) {
             sum += (NSInteger)pow(2, j);
         }
+        if (j == 63) {
+            sum += 1;
+        }
         j++;
     }
     
@@ -464,7 +467,13 @@ static WZZCalModel * model;
 
 //10转2
 - (NSString *)change2From10:(NSString *)n10 {
+    
     NSInteger nnn = n10.integerValue;
+    BOOL isFu = NO;
+    if (nnn < 0) {
+        nnn = -nnn;
+        isFu = YES;
+    }
     //预判断2进制位数
     long num = [NSString stringWithFormat:@"%lx", nnn].length*4;
     char a[num+1];
@@ -478,7 +487,43 @@ static WZZCalModel * model;
     a[num] = '\0';
     
     //转换字符串
-    NSString * strr = [NSString stringWithFormat:@"%s", a];
+    NSMutableString * strr = [NSMutableString stringWithFormat:@"%s", a];
+    
+    //如果是负数
+    if (isFu) {
+        //补0
+        for (int i = 0; i < 64-num; i++) {
+            [strr insertString:@"0" atIndex:0];
+        }
+        
+        //取反
+        NSString * num2 = strr;
+        strr = [NSMutableString stringWithString:@""];
+        for (int i = 0; i < num2.length; i++) {
+            [strr appendFormat:@"%d", !([num2 characterAtIndex:i]-'0')];
+        }
+        
+        //加1
+        NSInteger jjj = strr.length-1;
+        int strJJJ = [strr characterAtIndex:jjj]-'0';
+        
+        do {
+            strJJJ = [strr characterAtIndex:jjj]-'0';
+            if (strJJJ) {
+                //1
+                [strr replaceCharactersInRange:NSMakeRange(jjj, 1) withString:@"0"];
+            } else {
+                //0
+                [strr replaceCharactersInRange:NSMakeRange(jjj, 1) withString:@"1"];
+                break;
+            }
+            jjj--;
+            if (jjj < 0) {
+                break;
+            }
+        } while (strJJJ);
+    }
+    
     return strr;
 }
 
