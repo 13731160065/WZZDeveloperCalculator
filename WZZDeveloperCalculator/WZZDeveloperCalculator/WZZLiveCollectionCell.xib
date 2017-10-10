@@ -25,11 +25,23 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyC-Gr-3JK">
+                        <rect key="frame" x="0.0" y="0.0" width="155" height="155"/>
+                        <connections>
+                            <action selector="buttonClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="BCv-Bv-GVy"/>
+                            <action selector="buttonTouchDown:" destination="gTV-IL-0wX" eventType="touchDown" id="GLX-JS-Oty"/>
+                            <action selector="touchCancel:" destination="gTV-IL-0wX" eventType="touchDragOutside" id="8ae-TN-oTr"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="dyC-Gr-3JK" secondAttribute="bottom" id="1KY-Ut-iNr"/>
                 <constraint firstItem="fyE-Fs-ggO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2u2-3l-EGq"/>
+                <constraint firstItem="dyC-Gr-3JK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="4uB-h6-IfX"/>
+                <constraint firstAttribute="trailing" secondItem="dyC-Gr-3JK" secondAttribute="trailing" id="HbU-1H-Ena"/>
                 <constraint firstItem="fyE-Fs-ggO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="WmW-ee-XKG"/>
+                <constraint firstItem="dyC-Gr-3JK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cYl-Ki-gDw"/>
                 <constraint firstAttribute="trailing" secondItem="fyE-Fs-ggO" secondAttribute="trailing" id="drV-gn-FQR"/>
                 <constraint firstAttribute="bottom" secondItem="fyE-Fs-ggO" secondAttribute="bottom" id="eDz-IQ-gs6"/>
             </constraints>

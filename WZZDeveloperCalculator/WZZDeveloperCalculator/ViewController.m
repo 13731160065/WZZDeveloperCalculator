@@ -239,22 +239,21 @@
     //请求列表
     WZZLiveCollectionCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     cell.dataDic = dataArr[indexPath.row];
+    [cell buttonClickBlock:^{
+        NSString * text = dataArr[indexPath.row][@"title"];
+        NSString * returnStr = [[WZZCalModel shareInstance] handleText:text];
+        [showLabel setText:returnStr];
+    }];
     return cell;
 }
 
+#if 0//应该没用了
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSString * text = dataArr[indexPath.row][@"title"];
     NSString * returnStr = [[WZZCalModel shareInstance] handleText:text];
     [showLabel setText:returnStr];
-    WZZLiveCollectionCell * cell = (WZZLiveCollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    [UIView animateWithDuration:0.1f animations:^{
-        [cell setTransform:CGAffineTransformMakeScale(0.95f, 0.95f)];
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.2f animations:^{
-            [cell setTransform:CGAffineTransformMakeScale(1.0f, 1.0f)];
-        }];
-    }];
 }
+#endif
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
     return ITEMBORDER;

@@ -13,4 +13,9 @@
 @property (strong, nonatomic) NSDictionary * dataDic;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
+/**
+ 按钮被点击了
+ */
+- (void)buttonClickBlock:(void(^)())buttonClick;
+
 @end
