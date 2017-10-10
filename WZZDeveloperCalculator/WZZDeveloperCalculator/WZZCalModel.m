@@ -238,14 +238,20 @@ static WZZCalModel * model;
         case '>':
         case '^':
         {
-            if (!_d2) {
+            //如果操作数2不为空，则先计算
+            if (_d2) {
+                _currentNum = [self startCal];
+            }
+            
+            //然后d2被置空，再给操作符赋值
+            if (_op) {
+                _op = text;
+            } else {
                 _op = text;
                 _d1 = _currentNum;
                 _currentNum = @"0";
-                return _d1;
-            } else {
-                return _d2;
             }
+            return _d1;
         }
             break;
             
@@ -269,14 +275,20 @@ static WZZCalModel * model;
         {
             if ([text isEqualToString:@"÷"]) {
                 //除
-                if (!_d2) {
+                //如果操作数2不为空，则先计算
+                if (_d2) {
+                    _currentNum = [self startCal];
+                }
+                
+                //然后d2被置空，再给操作符赋值
+                if (_op) {
+                    _op = text;
+                } else {
                     _op = text;
                     _d1 = _currentNum;
                     _currentNum = @"0";
-                    return _d1;
-                } else {
-                    return _d2;
                 }
+                return _d1;
             }
         }
             break;
