@@ -11,7 +11,6 @@
 @interface WZZLiveCollectionCell () {
     
 }
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -19,7 +18,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.backgroundColor = [UIColor colorWithRed:0.97f green:0.55f blue:0.16f alpha:1.0f];
 }
 
 - (void)setDataDic:(NSDictionary *)dataDic {

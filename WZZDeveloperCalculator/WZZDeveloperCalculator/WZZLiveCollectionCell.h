@@ -11,5 +11,6 @@
 @interface WZZLiveCollectionCell : UICollectionViewCell
 
 @property (strong, nonatomic) NSDictionary * dataDic;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
