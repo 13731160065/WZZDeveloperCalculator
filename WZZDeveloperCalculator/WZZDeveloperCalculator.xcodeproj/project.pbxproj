@@ -86,6 +86,7 @@
 		71CE781F1F7E9556004DA8D0 /* WZZOtherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZOtherVC.h; sourceTree = "<group>"; };
 		71CE78201F7E9556004DA8D0 /* WZZOtherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZOtherVC.m; sourceTree = "<group>"; };
 		71CE78211F7E9556004DA8D0 /* WZZOtherVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZZOtherVC.xib; sourceTree = "<group>"; };
+		C53D6BE01F8DBC3C00693590 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				265F590E1E8F492300B88CA6 /* main.m */,
+				C53D6BE01F8DBC3C00693590 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -593,6 +595,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = L3EKEXQ8PC;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WZZDeveloperCalculator/PrefixHeader.pch";
 				INFOPLIST_FILE = WZZDeveloperCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -608,6 +611,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = L3EKEXQ8PC;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WZZDeveloperCalculator/PrefixHeader.pch";
 				INFOPLIST_FILE = WZZDeveloperCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

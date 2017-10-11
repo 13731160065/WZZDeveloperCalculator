@@ -22,7 +22,8 @@
 #define ITEMH ITEMW
 
 //00a2ff
-#define YELLOWCOLOR [UIColor colorWithRed:0.0000f green:0.6353f blue:1.0000f alpha:1.0f]
+#define YELLOWCOLOR UIColorFromRGB(0x00a2ff)
+//[UIColor colorWithRed:0.0000f green:0.6353f blue:1.0000f alpha:1.0f]
 
 @interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
