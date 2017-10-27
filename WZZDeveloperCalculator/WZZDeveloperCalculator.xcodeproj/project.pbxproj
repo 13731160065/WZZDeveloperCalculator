@@ -246,8 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				716F26E01EF6A5FA0085C839 /* Controller */,
-				716F26E41EF6A5FA0085C839 /* Model */,
-				716F26E51EF6A5FA0085C839 /* View */,
 			);
 			path = "网页浏览器";
 			sourceTree = "<group>";
@@ -260,20 +258,6 @@
 				716F26E31EF6A5FA0085C839 /* WZZWebVC.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		716F26E41EF6A5FA0085C839 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		716F26E51EF6A5FA0085C839 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		716F26E81EF6ACB80085C839 /* 网址识别 */ = {
