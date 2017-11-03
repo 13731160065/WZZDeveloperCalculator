@@ -28,6 +28,8 @@
 		716F26EB1EF6ACBF0085C839 /* NSString+WZZURLText.m in Sources */ = {isa = PBXBuildFile; fileRef = 716F26EA1EF6ACBF0085C839 /* NSString+WZZURLText.m */; };
 		71CE78221F7E9556004DA8D0 /* WZZOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CE78201F7E9556004DA8D0 /* WZZOtherVC.m */; };
 		71CE78231F7E9556004DA8D0 /* WZZOtherVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CE78211F7E9556004DA8D0 /* WZZOtherVC.xib */; };
+		C5A97C9A1FA3077E003DE86B /* WZZTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A97C981FA3077E003DE86B /* WZZTimeVC.m */; };
+		C5A97C9B1FA3077E003DE86B /* WZZTimeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A97C991FA3077E003DE86B /* WZZTimeVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,9 @@
 		71CE78201F7E9556004DA8D0 /* WZZOtherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZOtherVC.m; sourceTree = "<group>"; };
 		71CE78211F7E9556004DA8D0 /* WZZOtherVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZZOtherVC.xib; sourceTree = "<group>"; };
 		C53D6BE01F8DBC3C00693590 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C5A97C971FA3077E003DE86B /* WZZTimeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZTimeVC.h; sourceTree = "<group>"; };
+		C5A97C981FA3077E003DE86B /* WZZTimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZTimeVC.m; sourceTree = "<group>"; };
+		C5A97C991FA3077E003DE86B /* WZZTimeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WZZTimeVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +142,7 @@
 		265F590C1E8F492300B88CA6 /* WZZDeveloperCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				C5A97C951FA30765003DE86B /* 时间戳 */,
 				71CE781D1F7E9540004DA8D0 /* 其他 */,
 				716F26DA1EF6A5A30085C839 /* 网页浏览器 */,
 				26875FCF1EA6185E00D3A85B /* Tool */,
@@ -287,6 +293,24 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		C5A97C951FA30765003DE86B /* 时间戳 */ = {
+			isa = PBXGroup;
+			children = (
+				C5A97C961FA30765003DE86B /* Controller */,
+			);
+			path = "时间戳";
+			sourceTree = "<group>";
+		};
+		C5A97C961FA30765003DE86B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C5A97C971FA3077E003DE86B /* WZZTimeVC.h */,
+				C5A97C981FA3077E003DE86B /* WZZTimeVC.m */,
+				C5A97C991FA3077E003DE86B /* WZZTimeVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -395,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				265F59441E8F4B2C00B88CA6 /* WZZLiveCollectionCell.xib in Resources */,
+				C5A97C9B1FA3077E003DE86B /* WZZTimeVC.xib in Resources */,
 				265F591A1E8F492300B88CA6 /* Assets.xcassets in Resources */,
 				71CE78231F7E9556004DA8D0 /* WZZOtherVC.xib in Resources */,
 				26875FE61EA62F6D00D3A85B /* WZZLoadJSVC.xib in Resources */,
@@ -430,6 +455,7 @@
 				265F59431E8F4B2C00B88CA6 /* WZZLiveCollectionCell.m in Sources */,
 				26875FE51EA62F6D00D3A85B /* WZZLoadJSVC.m in Sources */,
 				26875FCB1EA5F17E00D3A85B /* JSViewController.m in Sources */,
+				C5A97C9A1FA3077E003DE86B /* WZZTimeVC.m in Sources */,
 				265F59471E8F4C6000B88CA6 /* WZZCalModel.m in Sources */,
 				26875FD31EA6186F00D3A85B /* WZZSingleManager.m in Sources */,
 				716F26E61EF6A5FA0085C839 /* WZZWebVC.m in Sources */,

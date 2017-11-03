@@ -42,18 +42,13 @@
         [mainTableView setDataSource:self];
         [mainTableView reloadData];
         [mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+        [mainTableView setTableFooterView:[[UIView alloc] init]];
     }
     return self;
 }
 
 + (void)showWithRect:(CGRect)rect selectBlock:(void (^)(NSString *))aBlock {
-    [self showWithRect:rect dataArr:@[
-                                      @"当前时间戳",
-                                      @"JavaScript",
-                                      @"随机数",
-                                      @"随机数设置",
-                                      @"浏览器"
-                                      ] selectBlock:aBlock];
+    [self showWithRect:rect dataArr:[WZZSingleManager shareInstance].menuArr selectBlock:aBlock];
 }
 
 + (void)showWithRect:(CGRect)rect dataArr:(NSArray *)dataArr selectBlock:(void (^)(NSString *))aBlock {
@@ -103,6 +98,10 @@
         }
         [self removeFromSuperview];
     }];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
 }
 
 @end

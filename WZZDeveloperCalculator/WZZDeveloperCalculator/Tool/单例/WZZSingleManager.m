@@ -33,6 +33,16 @@ static WZZSingleManager * mm;
     return mm;
 }
 
+- (NSArray *)menuArr {
+    return @[
+             @"当前时间戳",
+             @"JavaScript",
+             @"随机数",
+             @"随机数设置",
+             @"浏览器"
+             ];
+}
+
 //加载js标题
 - (NSMutableArray <NSDictionary <NSString *, NSString *>*>*)loadJsTitle {
     NSString * jsTitle = [[NSUserDefaults standardUserDefaults] objectForKey:JSCODEKEY];

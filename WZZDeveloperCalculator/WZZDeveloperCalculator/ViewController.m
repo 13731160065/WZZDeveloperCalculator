@@ -153,8 +153,13 @@
 #pragma mark - 点击事件
 //点击数字
 - (void)tapClick:(UITapGestureRecognizer *)tap {
+    
+    CGFloat selectHeight = kScreenHeight-94;
+    if ([WZZSingleManager shareInstance].menuArr.count*44 < selectHeight) {
+        selectHeight = [WZZSingleManager shareInstance].menuArr.count*44;
+    }
     //快速获取数字列表
-    [WZZSelectView showWithRect:CGRectMake(0, CGRectGetMaxY(showView.frame), kScreenWidth, 200) selectBlock:^(NSString * selectStr) {
+    [WZZSelectView showWithRect:CGRectMake(0, CGRectGetMaxY(showView.frame), kScreenWidth, selectHeight) selectBlock:^(NSString * selectStr) {
         
         //时间戳
         if ([selectStr isEqualToString:@"当前时间戳"]) {

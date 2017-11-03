@@ -16,6 +16,11 @@ struct WZZMAXMINNUM {
 @interface WZZSingleManager : NSObject
 
 /**
+ 弹出菜单数据源
+ */
+@property (nonatomic, strong, readonly) NSArray * menuArr;
+
+/**
  单例
  */
 + (instancetype)shareInstance;

@@ -9,6 +9,8 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#import "WZZSingleManager.h"
+
 #define UIColorFromRGB(rgbValue) [UIColor \
 colorWithRed:((float)(rgbValue >> 16))/255.0 \
 green:((float)(rgbValue >> 8))/255.0 \
