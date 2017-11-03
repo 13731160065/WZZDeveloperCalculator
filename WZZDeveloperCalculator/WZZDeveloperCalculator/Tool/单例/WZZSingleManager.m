@@ -39,7 +39,9 @@ static WZZSingleManager * mm;
              @"JavaScript",
              @"随机数",
              @"随机数设置",
-             @"浏览器"
+             @"浏览器",
+             @"时间转换",
+             @"其他"
              ];
 }
 

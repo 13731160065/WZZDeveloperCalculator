@@ -13,6 +13,7 @@
 #import "WZZSingleManager.h"
 #import "JSViewController.h"
 #import "WZZWebVC.h"
+#import "WZZTimeVC.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -216,9 +217,25 @@
             [self presentViewController:vc animated:YES completion:nil];
         }
         
+        //时间转换
+        if ([selectStr isEqualToString:@"时间转换"]) {
+            WZZTimeVC * timeVC = [[WZZTimeVC alloc] init];
+            [self presentViewController:timeVC animated:YES completion:nil];
+        }
+        
         //其他
         if ([selectStr isEqualToString:@"其他"]) {
-            
+            UIAlertController * con = [UIAlertController alertControllerWithTitle:@"感谢使用" message:@"感谢您的使用，有兴趣可以访问在下的github，在下才疏学浅欢迎相互交流" preferredStyle:UIAlertControllerStyleAlert];
+            [con addAction:[UIAlertAction actionWithTitle:@"去看看你的gayhub" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.github.com/13731160065"]];
+            }]];
+            [con addAction:[UIAlertAction actionWithTitle:@"程序员不容易，给你个打赏" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/13731160065/GiveMeMoney/master/README.md"]];
+            }]];
+            [con addAction:[UIAlertAction actionWithTitle:@"不感兴趣" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                
+            }]];
+            [self presentViewController:con animated:YES completion:nil];
         }
     }];
 }

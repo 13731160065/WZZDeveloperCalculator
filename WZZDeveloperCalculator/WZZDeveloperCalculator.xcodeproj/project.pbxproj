@@ -28,6 +28,7 @@
 		716F26EB1EF6ACBF0085C839 /* NSString+WZZURLText.m in Sources */ = {isa = PBXBuildFile; fileRef = 716F26EA1EF6ACBF0085C839 /* NSString+WZZURLText.m */; };
 		71CE78221F7E9556004DA8D0 /* WZZOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CE78201F7E9556004DA8D0 /* WZZOtherVC.m */; };
 		71CE78231F7E9556004DA8D0 /* WZZOtherVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CE78211F7E9556004DA8D0 /* WZZOtherVC.xib */; };
+		C5A068391FAC557000C0136A /* WZZTimeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A068371FAC554C00C0136A /* WZZTimeHandler.m */; };
 		C5A97C9A1FA3077E003DE86B /* WZZTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A97C981FA3077E003DE86B /* WZZTimeVC.m */; };
 		C5A97C9B1FA3077E003DE86B /* WZZTimeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A97C991FA3077E003DE86B /* WZZTimeVC.xib */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,8 @@
 		71CE78201F7E9556004DA8D0 /* WZZOtherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZOtherVC.m; sourceTree = "<group>"; };
 		71CE78211F7E9556004DA8D0 /* WZZOtherVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZZOtherVC.xib; sourceTree = "<group>"; };
 		C53D6BE01F8DBC3C00693590 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C5A068371FAC554C00C0136A /* WZZTimeHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZTimeHandler.m; sourceTree = "<group>"; };
+		C5A068381FAC554C00C0136A /* WZZTimeHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZTimeHandler.h; sourceTree = "<group>"; };
 		C5A97C971FA3077E003DE86B /* WZZTimeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZTimeVC.h; sourceTree = "<group>"; };
 		C5A97C981FA3077E003DE86B /* WZZTimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZTimeVC.m; sourceTree = "<group>"; };
 		C5A97C991FA3077E003DE86B /* WZZTimeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WZZTimeVC.xib; sourceTree = "<group>"; };
@@ -215,6 +218,7 @@
 		26875FCF1EA6185E00D3A85B /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				C5A068361FAC554C00C0136A /* 时间 */,
 				716F26E81EF6ACB80085C839 /* 网址识别 */,
 				26875FD01EA6185E00D3A85B /* 单例 */,
 			);
@@ -291,6 +295,15 @@
 				71CE78211F7E9556004DA8D0 /* WZZOtherVC.xib */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C5A068361FAC554C00C0136A /* 时间 */ = {
+			isa = PBXGroup;
+			children = (
+				C5A068381FAC554C00C0136A /* WZZTimeHandler.h */,
+				C5A068371FAC554C00C0136A /* WZZTimeHandler.m */,
+			);
+			path = "时间";
 			sourceTree = "<group>";
 		};
 		C5A97C951FA30765003DE86B /* 时间戳 */ = {
@@ -450,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A068391FAC557000C0136A /* WZZTimeHandler.m in Sources */,
 				2647A4C11E9B9349000482F4 /* WZZSelectView.m in Sources */,
 				265F59151E8F492300B88CA6 /* ViewController.m in Sources */,
 				265F59431E8F4B2C00B88CA6 /* WZZLiveCollectionCell.m in Sources */,
