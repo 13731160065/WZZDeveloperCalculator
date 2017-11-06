@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WZZTimeVC">
             <connections>
                 <outlet property="timeIntTF" destination="ia5-oe-O4J" id="8eL-IM-VhM"/>
+                <outlet property="timeTF" destination="n2n-lD-iOm" id="BRP-1J-bA5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="yearTF" destination="Eso-rH-q9Z" id="Giv-vs-ogn"/>
             </connections>
@@ -29,9 +30,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZZd-QI-7vX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <rect key="frame" x="0.0" y="20" width="375" height="50"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jq-AX-rot">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jq-AX-rot">
                                             <rect key="frame" x="8" y="0.0" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="f37-0W-I9q"/>
@@ -40,7 +41,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1970-00-00 00:00:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eso-rH-q9Z">
+                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1970-00-00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eso-rH-q9Z">
                                             <rect key="frame" x="66" y="10" width="301" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="qdd-bl-3Q2"/>
@@ -70,8 +71,51 @@
                                         <constraint firstAttribute="trailing" secondItem="3Ha-uD-Deo" secondAttribute="trailing" id="uTb-6r-Efa"/>
                                     </constraints>
                                 </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dyA-Zy-O3I">
+                                    <rect key="frame" x="0.0" y="70" width="375" height="50"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z7-y6-Yh1">
+                                            <rect key="frame" x="8" y="0.0" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="50" id="XuM-H0-0pj"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00:00:00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n2n-lD-iOm">
+                                            <rect key="frame" x="66" y="10" width="301" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="RfB-NC-8v3"/>
+                                            </constraints>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gz7-iV-F1E">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <connections>
+                                                <action selector="timeClick:" destination="-1" eventType="touchUpInside" id="u8u-lw-kag"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gz7-iV-F1E" firstAttribute="top" secondItem="dyA-Zy-O3I" secondAttribute="top" id="1pv-RJ-BPd"/>
+                                        <constraint firstItem="gz7-iV-F1E" firstAttribute="leading" secondItem="dyA-Zy-O3I" secondAttribute="leading" id="2eT-7f-V8b"/>
+                                        <constraint firstAttribute="bottom" secondItem="8z7-y6-Yh1" secondAttribute="bottom" id="98s-NC-kS1"/>
+                                        <constraint firstItem="8z7-y6-Yh1" firstAttribute="top" secondItem="dyA-Zy-O3I" secondAttribute="top" id="Eie-TK-Uci"/>
+                                        <constraint firstItem="n2n-lD-iOm" firstAttribute="centerY" secondItem="dyA-Zy-O3I" secondAttribute="centerY" id="RIA-wh-HeU"/>
+                                        <constraint firstAttribute="trailing" secondItem="gz7-iV-F1E" secondAttribute="trailing" id="Y6I-q4-5lj"/>
+                                        <constraint firstAttribute="trailing" secondItem="n2n-lD-iOm" secondAttribute="trailing" constant="8" id="avF-sO-wGc"/>
+                                        <constraint firstItem="n2n-lD-iOm" firstAttribute="leading" secondItem="8z7-y6-Yh1" secondAttribute="trailing" constant="8" id="deq-xI-bh9"/>
+                                        <constraint firstAttribute="bottom" secondItem="gz7-iV-F1E" secondAttribute="bottom" id="g3E-PA-cUC"/>
+                                        <constraint firstItem="8z7-y6-Yh1" firstAttribute="leading" secondItem="dyA-Zy-O3I" secondAttribute="leading" constant="8" id="lVX-Kf-zq0"/>
+                                        <constraint firstAttribute="height" constant="50" id="rrd-b5-hdA"/>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="u8l-TQ-e8n"/>
+                                    </constraints>
+                                </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zue-XB-lgb">
-                                    <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                    <rect key="frame" x="0.0" y="120" width="375" height="50"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间戳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ntt-gx-e6l">
                                             <rect key="frame" x="8" y="0.0" width="50" height="50"/>
@@ -82,15 +126,24 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0000000000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ia5-oe-O4J">
+                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0000000000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ia5-oe-O4J">
                                             <rect key="frame" x="66" y="10" width="301" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="Qh4-da-mZ7"/>
                                             </constraints>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="whS-Ou-h4M"/>
+                                            </connections>
                                         </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqC-Cs-nfv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <connections>
+                                                <action selector="timeIntClick:" destination="-1" eventType="touchUpInside" id="nm6-SE-450"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ntt-gx-e6l" firstAttribute="top" secondItem="zue-XB-lgb" secondAttribute="top" id="245-dh-uZO"/>
@@ -98,40 +151,56 @@
                                         <constraint firstItem="ia5-oe-O4J" firstAttribute="centerY" secondItem="zue-XB-lgb" secondAttribute="centerY" id="942-I0-HB6"/>
                                         <constraint firstAttribute="height" constant="50" id="9eT-W5-gig"/>
                                         <constraint firstAttribute="trailing" secondItem="ia5-oe-O4J" secondAttribute="trailing" constant="8" id="IRq-bM-VdS"/>
+                                        <constraint firstAttribute="trailing" secondItem="iqC-Cs-nfv" secondAttribute="trailing" id="JIK-xJ-Dx8"/>
+                                        <constraint firstItem="iqC-Cs-nfv" firstAttribute="top" secondItem="zue-XB-lgb" secondAttribute="top" id="Lcm-Ad-Gzj"/>
+                                        <constraint firstItem="iqC-Cs-nfv" firstAttribute="leading" secondItem="zue-XB-lgb" secondAttribute="leading" id="Vmj-xm-U4r"/>
                                         <constraint firstItem="ia5-oe-O4J" firstAttribute="leading" secondItem="ntt-gx-e6l" secondAttribute="trailing" constant="8" id="ldX-Z6-vzG"/>
+                                        <constraint firstAttribute="bottom" secondItem="iqC-Cs-nfv" secondAttribute="bottom" id="uUl-tQ-38h"/>
                                         <constraint firstItem="ntt-gx-e6l" firstAttribute="leading" secondItem="zue-XB-lgb" secondAttribute="leading" constant="8" id="zY9-h7-BZz"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFE-oR-QWC">
-                                    <rect key="frame" x="8" y="100" width="359" height="50"/>
+                                    <rect key="frame" x="8" y="170" width="359" height="50"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gS3-6l-fZQ">
+                                        <button opaque="NO" tag="5000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gS3-6l-fZQ">
                                             <rect key="frame" x="0.0" y="2" width="88.5" height="48"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="加时间">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="addTime:" destination="-1" eventType="touchUpInside" id="WI2-kB-sDU"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-oR-dQZ">
+                                        <button opaque="NO" tag="5001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-oR-dQZ">
                                             <rect key="frame" x="90.5" y="2" width="88" height="48"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="减时间">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="minusTime:" destination="-1" eventType="touchUpInside" id="DHG-0E-QIZ"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vk1-sM-c3t">
+                                        <button opaque="NO" tag="5002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vk1-sM-c3t">
                                             <rect key="frame" x="180.5" y="2" width="88.5" height="48"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="加时间戳">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="addTimeInt:" destination="-1" eventType="touchUpInside" id="7Ob-ry-6hb"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wq-ig-gqr">
+                                        <button opaque="NO" tag="5003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wq-ig-gqr">
                                             <rect key="frame" x="271" y="2" width="88" height="48"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="减时间戳">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
+                                            <connections>
+                                                <action selector="minusTimeInt:" destination="-1" eventType="touchUpInside" id="eXo-wn-KTp"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -155,7 +224,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGa-2g-46F">
-                                    <rect key="frame" x="8" y="150" width="359" height="50"/>
+                                    <rect key="frame" x="8" y="220" width="359" height="50"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGB-Z5-tk0">
                                             <rect key="frame" x="0.0" y="2" width="88.5" height="48"/>
@@ -210,15 +279,20 @@
                             <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="gGa-2g-46F" firstAttribute="leading" secondItem="niu-VN-frD" secondAttribute="leading" constant="8" id="5jX-Rh-pe2"/>
-                                <constraint firstItem="ZZd-QI-7vX" firstAttribute="top" secondItem="niu-VN-frD" secondAttribute="top" id="6mz-k6-zUl"/>
-                                <constraint firstItem="zue-XB-lgb" firstAttribute="top" secondItem="ZZd-QI-7vX" secondAttribute="bottom" id="7BJ-S4-zN7"/>
+                                <constraint firstItem="ZZd-QI-7vX" firstAttribute="top" secondItem="niu-VN-frD" secondAttribute="top" constant="20" id="6mz-k6-zUl"/>
                                 <constraint firstAttribute="height" constant="1000" id="8xS-Rl-aFm"/>
                                 <constraint firstItem="ZZd-QI-7vX" firstAttribute="leading" secondItem="niu-VN-frD" secondAttribute="leading" id="HVM-w3-pUS"/>
                                 <constraint firstAttribute="trailing" secondItem="zue-XB-lgb" secondAttribute="trailing" id="QN2-jO-w8a"/>
+                                <constraint firstAttribute="trailing" secondItem="dyA-Zy-O3I" secondAttribute="trailing" id="RKe-ZR-MoS"/>
+                                <constraint firstItem="dyA-Zy-O3I" firstAttribute="top" secondItem="ZZd-QI-7vX" secondAttribute="bottom" id="Rm8-hL-akE"/>
+                                <constraint firstItem="zue-XB-lgb" firstAttribute="top" secondItem="dyA-Zy-O3I" secondAttribute="bottom" id="Rvj-5r-PeN"/>
                                 <constraint firstItem="uFE-oR-QWC" firstAttribute="top" secondItem="zue-XB-lgb" secondAttribute="bottom" id="bh0-J4-Sny"/>
                                 <constraint firstAttribute="trailing" secondItem="gGa-2g-46F" secondAttribute="trailing" constant="8" id="gui-Cd-ufK"/>
+                                <constraint firstAttribute="trailing" secondItem="zue-XB-lgb" secondAttribute="trailing" id="hKj-TW-cJZ"/>
                                 <constraint firstAttribute="trailing" secondItem="uFE-oR-QWC" secondAttribute="trailing" constant="8" id="hph-36-khr"/>
                                 <constraint firstItem="uFE-oR-QWC" firstAttribute="leading" secondItem="niu-VN-frD" secondAttribute="leading" constant="8" id="iDp-gX-IqT"/>
+                                <constraint firstItem="dyA-Zy-O3I" firstAttribute="leading" secondItem="niu-VN-frD" secondAttribute="leading" id="poS-NY-r3Q"/>
+                                <constraint firstItem="zue-XB-lgb" firstAttribute="leading" secondItem="niu-VN-frD" secondAttribute="leading" id="tCX-bX-ud2"/>
                                 <constraint firstItem="zue-XB-lgb" firstAttribute="leading" secondItem="niu-VN-frD" secondAttribute="leading" id="xMT-Ko-vnk"/>
                                 <constraint firstAttribute="trailing" secondItem="ZZd-QI-7vX" secondAttribute="trailing" id="y1P-fo-qZ3"/>
                                 <constraint firstItem="gGa-2g-46F" firstAttribute="top" secondItem="uFE-oR-QWC" secondAttribute="bottom" id="zDR-z7-kmA"/>
@@ -246,6 +320,9 @@
                             <state key="normal" title="返回">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="backClick:" destination="-1" eventType="touchUpInside" id="La6-Nw-hiV"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.1019607843" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>

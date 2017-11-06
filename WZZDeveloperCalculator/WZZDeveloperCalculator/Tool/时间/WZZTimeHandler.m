@@ -64,7 +64,7 @@
 }
 
 //根据时间戳创建时间
-+ (instancetype)timeWithTimeTemp:(int)timeTemp {
++ (instancetype)timeWithTimeTemp:(NSInteger)timeTemp {
     NSDate * date = [NSDate dateWithTimeIntervalSince1970:timeTemp];
     return [self handleWithDate:date];
 }

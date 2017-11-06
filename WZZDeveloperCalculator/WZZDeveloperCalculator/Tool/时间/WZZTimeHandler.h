@@ -16,7 +16,7 @@
 @property (nonatomic, assign) int hour;
 @property (nonatomic, assign) int min;
 @property (nonatomic, assign) int sec;
-@property (nonatomic, assign) int timeTemp;
+@property (nonatomic, assign) NSInteger timeTemp;
 @property (nonatomic, strong) NSDate * date;
 
 /**
@@ -32,7 +32,7 @@
 /**
  根据时间戳获取时间
  */
-+ (instancetype)timeWithTimeTemp:(int)timeTemp;
++ (instancetype)timeWithTimeTemp:(NSInteger)timeTemp;
 
 /**
  格式化字符串转时间 xxxx-xx-xx xx:xx:xx
