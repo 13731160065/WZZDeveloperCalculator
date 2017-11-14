@@ -9,14 +9,18 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#ifdef __OBJC__
+
 #import "WZZSingleManager.h"
+#import "SVProgressHUD.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor \
 colorWithRed:((float)(rgbValue >> 16))/255.0 \
 green:((float)(rgbValue >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
-
 #define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+
+#endif
 
 #endif /* PrefixHeader_pch */

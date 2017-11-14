@@ -101,6 +101,9 @@
     [mainCollectionView registerNib:[UINib nibWithNibName:@"WZZLiveCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     [mainCollectionView setShowsVerticalScrollIndicator:NO];
     [mainCollectionView setShowsHorizontalScrollIndicator:NO];
+    
+//    https://raw.githubusercontent.com/13731160065/WZZCalH5Project/master/externFunc
+    
 }
 
 //加载数据
@@ -230,7 +233,7 @@
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.github.com/13731160065"]];
             }]];
             [con addAction:[UIAlertAction actionWithTitle:@"程序员不容易，给你个打赏" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/13731160065/GiveMeMoney/master/README.md"]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/13731160065/GiveMeMoney/blob/master/README.md"]];
             }]];
             [con addAction:[UIAlertAction actionWithTitle:@"不感兴趣" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
                 
