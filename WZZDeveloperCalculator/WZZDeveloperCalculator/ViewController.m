@@ -14,6 +14,7 @@
 #import "JSViewController.h"
 #import "WZZWebVC.h"
 #import "WZZTimeVC.h"
+#import "WZZHttpHandler.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -102,8 +103,12 @@
     [mainCollectionView setShowsVerticalScrollIndicator:NO];
     [mainCollectionView setShowsHorizontalScrollIndicator:NO];
     
-//    https://raw.githubusercontent.com/13731160065/WZZCalH5Project/master/externFunc
-    
+    [WZZHttpHandler checkZipVersion:^(NSString *zipVersion) {
+        NSInteger severVersion = [[[zipVersion componentsSeparatedByString:@"."] componentsJoinedByString:@""] integerValue];
+#warning 检测包内版本号，如果需要，启动更新
+    } fb:^(NSError *httpError) {
+        
+    }];
 }
 
 //加载数据
