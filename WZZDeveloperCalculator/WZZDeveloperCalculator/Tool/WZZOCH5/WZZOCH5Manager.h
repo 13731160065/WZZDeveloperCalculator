@@ -21,6 +21,11 @@
 + (instancetype)shareInstance;
 
 /**
+ 检测包版本
+ */
++ (NSString *)getVersion;
+
+/**
  解压数据
  */
 + (void)unzipToBundleWithData:(NSData *)data;

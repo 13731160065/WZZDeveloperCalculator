@@ -21,11 +21,12 @@
 
 @implementation WZZSelectView
 
-- (instancetype)initWithFrame:(CGRect)frame rect:(CGRect)rect
+- (instancetype)initWithFrame:(CGRect)frame dataArr:(NSArray *)arr rect:(CGRect)rect
 {
     self = [super initWithFrame:frame];
     if (self) {
         oFrome = rect;
+        dataArr = [NSMutableArray arrayWithArray:arr];
         [self setBackgroundColor:[UIColor colorWithWhite:0.0f alpha:0.0f]];
         [self addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
     
@@ -52,9 +53,8 @@
 }
 
 + (void)showWithRect:(CGRect)rect dataArr:(NSArray *)dataArr selectBlock:(void (^)(NSString *))aBlock {
-    WZZSelectView * view = [[WZZSelectView alloc] initWithFrame:[UIScreen mainScreen].bounds rect:rect];
+    WZZSelectView * view = [[WZZSelectView alloc] initWithFrame:[UIScreen mainScreen].bounds dataArr:dataArr rect:rect];
     [view selectBlock:aBlock];
-    view->dataArr = [NSMutableArray arrayWithArray:dataArr];
     [[UIApplication sharedApplication].keyWindow addSubview:view];
 }
 

@@ -34,6 +34,17 @@ static WZZOCH5Manager * wzzOCH5Manager;
     return wzzOCH5Manager;
 }
 
++ (NSString *)getVersion {
+    NSString * homeStr = [self wwwDir];
+    if (homeStr) {
+        NSFileHandle * handle = [NSFileHandle fileHandleForReadingAtPath:[NSString stringWithFormat:@"%@/version", homeStr]];
+        NSString * str = [[NSString alloc] initWithData:[handle readDataToEndOfFile] encoding:NSUTF8StringEncoding];
+        return str;
+    } else {
+        return @"0.0.0";
+    }
+}
+
 + (void)unzipToBundleWithData:(NSData *)data {
     NSFileManager * fileManager = [NSFileManager defaultManager];
     //如果没有这个文件夹就创建

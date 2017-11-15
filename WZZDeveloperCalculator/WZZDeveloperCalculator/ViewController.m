@@ -15,6 +15,8 @@
 #import "WZZWebVC.h"
 #import "WZZTimeVC.h"
 #import "WZZHttpHandler.h"
+#import "WZZOCH5Manager.h"
+#import "WZZOCH5VC.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -34,6 +36,7 @@
     UILabel * showLabel;//显示数字
     NSMutableArray * dataArr;//数据源
     NSMutableArray * buttonsArr;//切换按钮
+    NSMutableArray * extArr;//扩展模块
 }
 
 @end
@@ -103,11 +106,38 @@
     [mainCollectionView setShowsVerticalScrollIndicator:NO];
     [mainCollectionView setShowsHorizontalScrollIndicator:NO];
     
+    //检查更新
+    [SVProgressHUD showWithStatus:@"正在检查包内容"];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     [WZZHttpHandler checkZipVersion:^(NSString *zipVersion) {
+        //拆分版本号
         NSInteger severVersion = [[[zipVersion componentsSeparatedByString:@"."] componentsJoinedByString:@""] integerValue];
-#warning 检测包内版本号，如果需要，启动更新
-    } fb:^(NSError *httpError) {
+        NSInteger localVersion = [[[[WZZOCH5Manager getVersion] componentsSeparatedByString:@"."] componentsJoinedByString:@""] integerValue];
         
+        //更新扩展模块
+        [WZZHttpHandler getExternFunc:^(NSArray *resp) {
+            extArr = [NSMutableArray arrayWithArray:resp];
+            //对比版本号
+            if (localVersion < severVersion) {
+                //更新压缩包
+                [WZZHttpHandler updateZip:^{
+                    [SVProgressHUD dismiss];
+                    [SVProgressHUD showSuccessWithStatus:@"检测完成"];
+                } fb:^(NSError *httpError) {
+                    [SVProgressHUD dismiss];
+                    [SVProgressHUD showErrorWithStatus:@"加载压缩包失败"];
+                }];
+            } else {
+                [SVProgressHUD dismiss];
+                [SVProgressHUD showSuccessWithStatus:@"检测完成"];
+            }
+        } fb:^(NSError *httpError) {
+            [SVProgressHUD dismiss];
+            [SVProgressHUD showErrorWithStatus:@"加载扩展模块失败"];
+        }];
+    } fb:^(NSError *httpError) {
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showErrorWithStatus:@"加载检查内容失败"];
     }];
 }
 
@@ -164,22 +194,35 @@
 - (void)tapClick:(UITapGestureRecognizer *)tap {
     
     CGFloat selectHeight = kScreenHeight-94;
-    if ([WZZSingleManager shareInstance].menuArr.count*44 < selectHeight) {
-        selectHeight = [WZZSingleManager shareInstance].menuArr.count*44;
+    
+    NSMutableArray * allArr = [NSMutableArray arrayWithArray:[WZZSingleManager shareInstance].menuArr];
+    [allArr addObjectsFromArray:extArr];
+    
+    if (allArr.count*44 < selectHeight) {
+        selectHeight = allArr.count*44;
     }
     //快速获取数字列表
-    [WZZSelectView showWithRect:CGRectMake(0, CGRectGetMaxY(showView.frame), kScreenWidth, selectHeight) selectBlock:^(NSString * selectStr) {
+    [WZZSelectView showWithRect:CGRectMake(0, CGRectGetMaxY(showView.frame), kScreenWidth, selectHeight) dataArr:allArr selectBlock:^(NSString * selectStr) {
+        
+        //OCH5代码
+        if ([extArr containsObject:selectStr]) {
+            WZZOCH5VC * och5VC = [[WZZOCH5VC alloc] init];
+            och5VC.url = [NSString stringWithFormat:@"wzzoch5://index.html?funcName=%@", selectStr];
+            [self presentViewController:och5VC animated:YES completion:nil];
+        }
         
         //时间戳
         if ([selectStr isEqualToString:@"当前时间戳"]) {
             NSString * str = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
             [showLabel setText:[[WZZCalModel shareInstance] inputLongText:str]];
+            return ;
         }
         
         //js
         if ([selectStr isEqualToString:@"JavaScript"]) {
             JSViewController * jsss = [[JSViewController alloc] init];
             [self presentViewController:jsss animated:YES completion:nil];
+            return ;
         }
         
         //随机数
@@ -187,6 +230,7 @@
             struct WZZMAXMINNUM nn = [[WZZSingleManager shareInstance] loadMaxMinNum];
             NSInteger rNum = arc4random()%(nn.max-nn.min)+nn.min;
             [showLabel setText:[[WZZCalModel shareInstance] inputLongText:@(rNum).stringValue]];
+            return ;
         }
         
         //随机数设置
@@ -217,18 +261,21 @@
             }]];
             [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
             [self presentViewController:alert animated:YES completion:nil];
+            return ;
         }
         
         //浏览器
         if ([selectStr isEqualToString:@"浏览器"]) {
             WZZWebVC * vc = [[WZZWebVC alloc] init];
             [self presentViewController:vc animated:YES completion:nil];
+            return ;
         }
         
         //时间转换
         if ([selectStr isEqualToString:@"时间转换"]) {
             WZZTimeVC * timeVC = [[WZZTimeVC alloc] init];
             [self presentViewController:timeVC animated:YES completion:nil];
+            return ;
         }
         
         //其他
@@ -244,6 +291,7 @@
                 
             }]];
             [self presentViewController:con animated:YES completion:nil];
+            return ;
         }
     }];
 }

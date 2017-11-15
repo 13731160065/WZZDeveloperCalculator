@@ -54,19 +54,26 @@ failedBlock:(void(^)(NSError * httpError))failedBlock {
                fb:(void(^)(NSError * httpError))fb {
     dispatch_queue_t tt = dispatch_queue_create("zipdownload", DISPATCH_QUEUE_CONCURRENT);
     dispatch_async(tt, ^{
+        //请求zip地址
         NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://raw.githubusercontent.com/13731160065/WZZCalH5Project/master/homeUrl"]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (data.length) {
-                [WZZOCH5Manager unzipToBundleWithData:data];
+        NSString * zipUrl = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        zipUrl = [[zipUrl componentsSeparatedByString:@"\n"] componentsJoinedByString:@""];
+        //下载zip解压数据
+        NSData * zipData = [NSData dataWithContentsOfURL:[NSURL URLWithString:zipUrl]];
+        if (data.length) {
+            [WZZOCH5Manager unzipToBundleWithData:zipData];
+            dispatch_async(dispatch_get_main_queue(), ^{
                 if (sb) {
                     sb();
                 }
-            } else {
+            });
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
                 if (fb) {
                     fb(nil);
                 }
-            }
-        });
+            });
+        }
     });
 }
 

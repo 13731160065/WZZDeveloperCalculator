@@ -26,6 +26,9 @@
 //变量赋值
 - (void)setObjWithKeyPath:(NSString *)keyPath Value:(id)value Obj:(id)obj;
 
+//刷新页面
+- (void)reloadWithUrl:(NSString *)str;
+
 #pragma mark - 界面跳转
 //nav模式进入界面
 - (void)pushVC:(id)vc;

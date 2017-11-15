@@ -48,6 +48,15 @@
     [mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_url] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5.0f]];
 }
 
+//刷新页面 
+- (void)reloadWithUrl:(NSString *)str {
+    if ([str hasPrefix:@"wzzoch5://"]) {
+        str = [[str componentsSeparatedByString:@"wzzoch5://"] componentsJoinedByString:@""];
+        str = [[WZZOCH5Manager wwwDir] stringByAppendingFormat:@"/%@", str];
+    }
+    [mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5.0f]];
+}
+
 //js回调oc block
 - (void)handleJSCallBack:(void (^)(id))aBlock {
     _handleJSBlock = aBlock;
