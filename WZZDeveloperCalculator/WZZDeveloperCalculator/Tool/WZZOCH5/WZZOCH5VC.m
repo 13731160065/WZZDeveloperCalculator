@@ -45,7 +45,12 @@
         _url = [[_url componentsSeparatedByString:@"wzzoch5://"] componentsJoinedByString:@""];
         _url = [[WZZOCH5Manager wwwDir] stringByAppendingFormat:@"/%@", _url];
     }
-    [mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_url] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5.0f]];
+    
+    NSURL * urlObj = [NSURL URLWithString:_url];
+    if (!urlObj) {
+        urlObj = [NSURL URLWithString:[_url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    }
+    [mainWebView loadRequest:[NSURLRequest requestWithURL:urlObj cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5.0f]];
 }
 
 //刷新页面 
@@ -154,19 +159,13 @@
 }
 
 #pragma mark - webview代理
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     JSContext * jsCon = [webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
     jsCon[@"och5_JSContext"] = self;
     jsCon[@"och5_HomeDir"] = [WZZOCH5Manager wwwDir];
-
-    [webView stringByEvaluatingJavaScriptFromString:
-     [NSString stringWithFormat:
-      @"var pchElement = document.createElement(\"script\");"
-      "pchElement.setAttribute(\"type\",\"text/javascript\");"
-      "pchElement.setAttribute(\"src\",\"%@/WZZOCH5Manager.js\");"
-      "document.head.insertBefore(pchElement, document.head.firstElementChild);", [WZZOCH5Manager wwwDir]
-      ]
-     ];
+    jsCon[@"och5_viewDidLoad"] = ^{
+        NSLog(@"nono");
+    };
     
     NSArray * keysArr = _args.allKeys;
     for (int i = 0; i < keysArr.count; i++) {
@@ -180,6 +179,28 @@
         context.exception = exceptionValue;
         NSLog(@"异常信息：%@", exceptionValue);
     };
+    return YES;
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [webView stringByEvaluatingJavaScriptFromString:
+     [NSString stringWithFormat:
+      @"var pchElement = document.createElement(\"script\");"
+      "pchElement.setAttribute(\"type\",\"text/javascript\");"
+      "pchElement.setAttribute(\"src\",\"%@/WZZOCH5Manager.js\");"
+      "document.head.insertBefore(pchElement, document.head.firstElementChild);", [WZZOCH5Manager wwwDir]
+      ]
+     ];
+    [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@
+                                                     "try {"
+                                                     "setTimeout('viewDidLoad()', 10);"//这里必须用延时来处理
+                                                     "} catch(exp) {"
+                                                     "}"
+                                                     ]];
 }
 
 @end
