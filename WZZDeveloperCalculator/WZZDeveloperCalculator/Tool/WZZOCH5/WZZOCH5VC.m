@@ -42,7 +42,8 @@
     [mainWebView setScalesPageToFit:YES];
     [mainWebView setDelegate:self];
     if ([_url hasPrefix:@"wzzoch5://"]) {
-        _url = [[_url componentsSeparatedByString:@"wzzoch5://"] componentsJoinedByString:@""];
+//        _url = [[_url componentsSeparatedByString:@"wzzoch5://"] componentsJoinedByString:@""];
+        _url = @"/test1/test.html";
         _url = [[WZZOCH5Manager wwwDir] stringByAppendingFormat:@"/%@", _url];
     }
     
@@ -59,7 +60,13 @@
         str = [[str componentsSeparatedByString:@"wzzoch5://"] componentsJoinedByString:@""];
         str = [[WZZOCH5Manager wwwDir] stringByAppendingFormat:@"/%@", str];
     }
-    [mainWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:str] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5.0f]];
+    NSURL * urlObj = [NSURL URLWithString:str];
+    if (!urlObj) {
+        urlObj = [NSURL URLWithString:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [mainWebView loadRequest:[NSURLRequest requestWithURL:urlObj cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5.0f]];
+    });
 }
 
 //js回调oc block
@@ -195,9 +202,12 @@
       "document.head.insertBefore(pchElement, document.head.firstElementChild);", [WZZOCH5Manager wwwDir]
       ]
      ];
+    [webView stringByEvaluatingJavaScriptFromString:@"alert(document.head.innerHTML);"];
     [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@
                                                      "try {"
-                                                     "setTimeout('viewDidLoad()', 10);"//这里必须用延时来处理
+                                                         "if (typeof viewDidLoad == \"function\") {"
+                                                             "setTimeout('viewDidLoad()', 100);"//这里必须用延时来处理
+                                                         "}"
                                                      "} catch(exp) {"
                                                      "}"
                                                      ]];
