@@ -202,7 +202,6 @@
       "document.head.insertBefore(pchElement, document.head.firstElementChild);", [WZZOCH5Manager wwwDir]
       ]
      ];
-    [webView stringByEvaluatingJavaScriptFromString:@"alert(document.head.innerHTML);"];
     [webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@
                                                      "try {"
                                                          "if (typeof viewDidLoad == \"function\") {"
