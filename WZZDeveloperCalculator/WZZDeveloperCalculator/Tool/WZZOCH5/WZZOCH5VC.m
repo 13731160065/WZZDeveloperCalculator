@@ -31,8 +31,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    if (@available(iOS 11.0, *)) {
+        [mainWebView.scrollView setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    } else {
+        [self setAutomaticallyAdjustsScrollViewInsets:NO];
+    }
     
     mainWebView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:mainWebView];

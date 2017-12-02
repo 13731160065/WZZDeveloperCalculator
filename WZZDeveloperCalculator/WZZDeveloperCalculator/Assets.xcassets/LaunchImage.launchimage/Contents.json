@@ -3,6 +3,15 @@
     {
       "extent" : "full-screen",
       "idiom" : "iphone",
+      "subtype" : "2436h",
+      "filename" : "EA361C91F4C84D6882626CBEFB0811EC.jpg",
+      "minimum-system-version" : "11.0",
+      "orientation" : "portrait",
+      "scale" : "3x"
+    },
+    {
+      "extent" : "full-screen",
+      "idiom" : "iphone",
       "subtype" : "736h",
       "filename" : "Simulator Screen Shot 2017年10月12日 上午12.05.10.png",
       "minimum-system-version" : "8.0",
