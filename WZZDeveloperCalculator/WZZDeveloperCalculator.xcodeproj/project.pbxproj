@@ -591,8 +591,7 @@
 				TargetAttributes = {
 					265F59091E8F492300B88CA6 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = L3EKEXQ8PC;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					265F59221E8F492400B88CA6 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -845,8 +844,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L3EKEXQ8PC;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/WZZDeveloperCalculator/Tool/WZZOCH5";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WZZDeveloperCalculator/PrefixHeader.pch";
@@ -854,7 +853,7 @@
 				INFOPLIST_FILE = WZZDeveloperCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.www.fff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.cal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -867,9 +866,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L3EKEXQ8PC;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = GMLKLDG682;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/WZZDeveloperCalculator/Tool/WZZOCH5";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WZZDeveloperCalculator/PrefixHeader.pch";
@@ -877,10 +876,10 @@
 				INFOPLIST_FILE = WZZDeveloperCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.www.fff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.cal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "fe5495cf-1ac5-4474-9aab-5395e58242b0";
+				PROVISIONING_PROFILE_SPECIFIER = calAppstore;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
