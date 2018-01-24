@@ -71,6 +71,7 @@
     [showLabel setTextColor:[UIColor whiteColor]];
     [showLabel setAdjustsFontSizeToFitWidth:YES];
     [showLabel setUserInteractionEnabled:YES];
+    
     //添加手势
     [showLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)]];
     [showLabel addGestureRecognizer:[[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longClick:)]];
@@ -79,6 +80,7 @@
     //切换
     UIView * segView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(showLabel.frame), showView.frame.size.width, showView.frame.size.height-showLabel.frame.size.height)];
     [showView addSubview:segView];
+    
     //按钮
     NSArray * titleArr = @[@"2进制", @"8进制", @"10进制", @"16进制"];
     const CGFloat buttonW = segView.frame.size.width/titleArr.count;
@@ -106,6 +108,7 @@
     [mainCollectionView setShowsVerticalScrollIndicator:NO];
     [mainCollectionView setShowsHorizontalScrollIndicator:NO];
     
+#if 0
     //检查更新
     [SVProgressHUD showWithStatus:@"正在检查包内容"];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
@@ -139,6 +142,7 @@
         [SVProgressHUD dismiss];
         [SVProgressHUD showErrorWithStatus:@"加载检查内容失败"];
     }];
+#endif
 }
 
 //加载数据
