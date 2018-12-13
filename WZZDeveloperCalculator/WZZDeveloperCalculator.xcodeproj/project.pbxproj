@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04BF0A4121C240E7002EE360 /* WZZXibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BF0A3F21C240E7002EE360 /* WZZXibVC.m */; };
+		04BF0A4221C240E7002EE360 /* WZZXibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BF0A4021C240E7002EE360 /* WZZXibVC.xib */; };
 		2647A4C11E9B9349000482F4 /* WZZSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2647A4C01E9B9349000482F4 /* WZZSelectView.m */; };
 		265F590F1E8F492300B88CA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 265F590E1E8F492300B88CA6 /* main.m */; };
 		265F59121E8F492300B88CA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 265F59111E8F492300B88CA6 /* AppDelegate.m */; };
@@ -78,6 +80,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04BF0A3E21C240E7002EE360 /* WZZXibVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZXibVC.h; sourceTree = "<group>"; };
+		04BF0A3F21C240E7002EE360 /* WZZXibVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZXibVC.m; sourceTree = "<group>"; };
+		04BF0A4021C240E7002EE360 /* WZZXibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WZZXibVC.xib; sourceTree = "<group>"; };
 		2647A4BF1E9B9349000482F4 /* WZZSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZSelectView.h; sourceTree = "<group>"; };
 		2647A4C01E9B9349000482F4 /* WZZSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZSelectView.m; sourceTree = "<group>"; };
 		265F590A1E8F492300B88CA6 /* WZZDeveloperCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZZDeveloperCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +250,9 @@
 				265F59461E8F4C6000B88CA6 /* WZZCalModel.m */,
 				265F59131E8F492300B88CA6 /* ViewController.h */,
 				265F59141E8F492300B88CA6 /* ViewController.m */,
+				04BF0A3E21C240E7002EE360 /* WZZXibVC.h */,
+				04BF0A3F21C240E7002EE360 /* WZZXibVC.m */,
+				04BF0A4021C240E7002EE360 /* WZZXibVC.xib */,
 				265F59401E8F4B2C00B88CA6 /* WZZLiveCollectionCell.h */,
 				265F59411E8F4B2C00B88CA6 /* WZZLiveCollectionCell.m */,
 				265F59421E8F4B2C00B88CA6 /* WZZLiveCollectionCell.xib */,
@@ -634,6 +642,7 @@
 				265F59441E8F4B2C00B88CA6 /* WZZLiveCollectionCell.xib in Resources */,
 				C5A97C9B1FA3077E003DE86B /* WZZTimeVC.xib in Resources */,
 				265F591A1E8F492300B88CA6 /* Assets.xcassets in Resources */,
+				04BF0A4221C240E7002EE360 /* WZZXibVC.xib in Resources */,
 				71CE78231F7E9556004DA8D0 /* WZZOtherVC.xib in Resources */,
 				26875FE61EA62F6D00D3A85B /* WZZLoadJSVC.xib in Resources */,
 				716F26E71EF6A5FA0085C839 /* WZZWebVC.xib in Resources */,
@@ -675,6 +684,7 @@
 				71B651201FBB5C4D002B9582 /* aescrypt.c in Sources */,
 				71B651211FBB5C4D002B9582 /* fileenc.c in Sources */,
 				71B651221FBB5C4D002B9582 /* sha1.c in Sources */,
+				04BF0A4121C240E7002EE360 /* WZZXibVC.m in Sources */,
 				71B651231FBB5C4D002B9582 /* aes_ni.c in Sources */,
 				71B651241FBB5C4D002B9582 /* prng.c in Sources */,
 				71B651251FBB5C4D002B9582 /* pwd2key.c in Sources */,
