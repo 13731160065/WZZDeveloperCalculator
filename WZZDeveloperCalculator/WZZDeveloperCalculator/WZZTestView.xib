@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WZZTestView">
+            <connections>
+                <outlet property="wzz_xibView" destination="iN0-l3-epB" id="SHG-J0-qsY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzH-XJ-py0">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+                    <state key="normal" title="Button1"/>
+                    <connections>
+                        <action selector="b1Click:" destination="-1" eventType="touchUpInside" id="Z6O-7y-XrU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYn-dR-3pN">
+                    <rect key="frame" x="0.0" y="72" width="375" height="72"/>
+                    <state key="normal" title="Button2"/>
+                    <connections>
+                        <action selector="b2Click:" destination="-1" eventType="touchUpInside" id="xvQ-58-GeO"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hzH-XJ-py0" secondAttribute="trailing" id="2MN-He-ZIA"/>
+                <constraint firstItem="hzH-XJ-py0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="EoZ-UQ-j8y"/>
+                <constraint firstItem="sYn-dR-3pN" firstAttribute="top" secondItem="hzH-XJ-py0" secondAttribute="bottom" id="KXE-bJ-z6d"/>
+                <constraint firstItem="sYn-dR-3pN" firstAttribute="height" secondItem="hzH-XJ-py0" secondAttribute="height" id="bLq-9x-hXS"/>
+                <constraint firstItem="hzH-XJ-py0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="iMW-bz-oWH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="sYn-dR-3pN" secondAttribute="bottom" id="lfQ-hd-RRC"/>
+                <constraint firstItem="sYn-dR-3pN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pOQ-T5-1hC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="sYn-dR-3pN" secondAttribute="trailing" id="rXl-OY-dEj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="138.40000000000001" y="-114.24287856071965"/>
+        </view>
+    </objects>
+</document>

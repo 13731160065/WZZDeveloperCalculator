@@ -17,6 +17,7 @@
 #import "WZZHttpHandler.h"
 #import "WZZOCH5Manager.h"
 #import "WZZOCH5VC.h"
+#import "WZZTestFVC.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -279,6 +280,13 @@
         if ([selectStr isEqualToString:@"时间转换"]) {
             WZZTimeVC * timeVC = [[WZZTimeVC alloc] init];
             [self presentViewController:timeVC animated:YES completion:nil];
+            return ;
+        }
+        
+        //浏览器
+        if ([selectStr isEqualToString:@"test"]) {
+            WZZTestFVC * vc = [[WZZTestFVC alloc] init];
+            [self presentViewController:vc animated:YES completion:nil];
             return ;
         }
         

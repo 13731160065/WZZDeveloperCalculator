@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		04BF0A4121C240E7002EE360 /* WZZXibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BF0A3F21C240E7002EE360 /* WZZXibVC.m */; };
 		04BF0A4221C240E7002EE360 /* WZZXibVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BF0A4021C240E7002EE360 /* WZZXibVC.xib */; };
+		04EA58CA21C3560C005AEC5C /* WZZTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA58C921C3560C005AEC5C /* WZZTestView.m */; };
+		04EA58CC21C3561C005AEC5C /* WZZTestView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EA58CB21C3561C005AEC5C /* WZZTestView.xib */; };
+		04EA58D021C35DBA005AEC5C /* WZZTestFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA58CE21C35DBA005AEC5C /* WZZTestFVC.m */; };
+		04EA58D121C35DBA005AEC5C /* WZZTestFVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EA58CF21C35DBA005AEC5C /* WZZTestFVC.xib */; };
+		04EA58D421C36798005AEC5C /* WZZSuperXibView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EA58D321C36798005AEC5C /* WZZSuperXibView.m */; };
 		2647A4C11E9B9349000482F4 /* WZZSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2647A4C01E9B9349000482F4 /* WZZSelectView.m */; };
 		265F590F1E8F492300B88CA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 265F590E1E8F492300B88CA6 /* main.m */; };
 		265F59121E8F492300B88CA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 265F59111E8F492300B88CA6 /* AppDelegate.m */; };
@@ -83,6 +88,14 @@
 		04BF0A3E21C240E7002EE360 /* WZZXibVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZXibVC.h; sourceTree = "<group>"; };
 		04BF0A3F21C240E7002EE360 /* WZZXibVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZXibVC.m; sourceTree = "<group>"; };
 		04BF0A4021C240E7002EE360 /* WZZXibVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WZZXibVC.xib; sourceTree = "<group>"; };
+		04EA58C821C3560C005AEC5C /* WZZTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZTestView.h; sourceTree = "<group>"; };
+		04EA58C921C3560C005AEC5C /* WZZTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZTestView.m; sourceTree = "<group>"; };
+		04EA58CB21C3561C005AEC5C /* WZZTestView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WZZTestView.xib; sourceTree = "<group>"; };
+		04EA58CD21C35DBA005AEC5C /* WZZTestFVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZTestFVC.h; sourceTree = "<group>"; };
+		04EA58CE21C35DBA005AEC5C /* WZZTestFVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZTestFVC.m; sourceTree = "<group>"; };
+		04EA58CF21C35DBA005AEC5C /* WZZTestFVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WZZTestFVC.xib; sourceTree = "<group>"; };
+		04EA58D221C36798005AEC5C /* WZZSuperXibView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZSuperXibView.h; sourceTree = "<group>"; };
+		04EA58D321C36798005AEC5C /* WZZSuperXibView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZSuperXibView.m; sourceTree = "<group>"; };
 		2647A4BF1E9B9349000482F4 /* WZZSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZSelectView.h; sourceTree = "<group>"; };
 		2647A4C01E9B9349000482F4 /* WZZSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZSelectView.m; sourceTree = "<group>"; };
 		265F590A1E8F492300B88CA6 /* WZZDeveloperCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZZDeveloperCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +263,14 @@
 				265F59461E8F4C6000B88CA6 /* WZZCalModel.m */,
 				265F59131E8F492300B88CA6 /* ViewController.h */,
 				265F59141E8F492300B88CA6 /* ViewController.m */,
+				04EA58CD21C35DBA005AEC5C /* WZZTestFVC.h */,
+				04EA58CE21C35DBA005AEC5C /* WZZTestFVC.m */,
+				04EA58CF21C35DBA005AEC5C /* WZZTestFVC.xib */,
+				04EA58D221C36798005AEC5C /* WZZSuperXibView.h */,
+				04EA58D321C36798005AEC5C /* WZZSuperXibView.m */,
+				04EA58C821C3560C005AEC5C /* WZZTestView.h */,
+				04EA58C921C3560C005AEC5C /* WZZTestView.m */,
+				04EA58CB21C3561C005AEC5C /* WZZTestView.xib */,
 				04BF0A3E21C240E7002EE360 /* WZZXibVC.h */,
 				04BF0A3F21C240E7002EE360 /* WZZXibVC.m */,
 				04BF0A4021C240E7002EE360 /* WZZXibVC.xib */,
@@ -599,6 +620,7 @@
 				TargetAttributes = {
 					265F59091E8F492300B88CA6 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = GMLKLDG682;
 						ProvisioningStyle = Manual;
 					};
 					265F59221E8F492400B88CA6 = {
@@ -639,6 +661,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				71B651161FBB5B1E002B9582 /* SVProgressHUD.bundle in Resources */,
+				04EA58D121C35DBA005AEC5C /* WZZTestFVC.xib in Resources */,
+				04EA58CC21C3561C005AEC5C /* WZZTestView.xib in Resources */,
 				265F59441E8F4B2C00B88CA6 /* WZZLiveCollectionCell.xib in Resources */,
 				C5A97C9B1FA3077E003DE86B /* WZZTimeVC.xib in Resources */,
 				265F591A1E8F492300B88CA6 /* Assets.xcassets in Resources */,
@@ -678,6 +702,7 @@
 				71B6511A1FBB5C4D002B9582 /* ioapi.c in Sources */,
 				71B6511B1FBB5C4D002B9582 /* ioapi_buf.c in Sources */,
 				71B6511C1FBB5C4D002B9582 /* ioapi_mem.c in Sources */,
+				04EA58D421C36798005AEC5C /* WZZSuperXibView.m in Sources */,
 				71B6511D1FBB5C4D002B9582 /* minishared.c in Sources */,
 				71B6511E1FBB5C4D002B9582 /* aeskey.c in Sources */,
 				71B6511F1FBB5C4D002B9582 /* hmac.c in Sources */,
@@ -697,6 +722,7 @@
 				71B6510A1FBB58AB002B9582 /* WZZOCH5Manager.m in Sources */,
 				71B6510B1FBB58AB002B9582 /* WZZOCH5VC.m in Sources */,
 				71B6510C1FBB58AB002B9582 /* SSZipArchive.m in Sources */,
+				04EA58D021C35DBA005AEC5C /* WZZTestFVC.m in Sources */,
 				C5A068391FAC557000C0136A /* WZZTimeHandler.m in Sources */,
 				71B650F91FBB5239002B9582 /* WZZHttpHandler.m in Sources */,
 				2647A4C11E9B9349000482F4 /* WZZSelectView.m in Sources */,
@@ -706,6 +732,7 @@
 				26875FCB1EA5F17E00D3A85B /* JSViewController.m in Sources */,
 				C5A97C9A1FA3077E003DE86B /* WZZTimeVC.m in Sources */,
 				265F59471E8F4C6000B88CA6 /* WZZCalModel.m in Sources */,
+				04EA58CA21C3560C005AEC5C /* WZZTestView.m in Sources */,
 				26875FD31EA6186F00D3A85B /* WZZSingleManager.m in Sources */,
 				716F26E61EF6A5FA0085C839 /* WZZWebVC.m in Sources */,
 				716F26EB1EF6ACBF0085C839 /* NSString+WZZURLText.m in Sources */,
@@ -855,7 +882,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = GMLKLDG682;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/WZZDeveloperCalculator/Tool/WZZOCH5";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WZZDeveloperCalculator/PrefixHeader.pch";
@@ -866,7 +893,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.cal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = wzznormalDev;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;

@@ -41,6 +41,7 @@ static WZZSingleManager * mm;
              @"随机数设置",
              @"浏览器",
              @"时间转换",
+             @"test",
              @"其他"
              ];
 }
