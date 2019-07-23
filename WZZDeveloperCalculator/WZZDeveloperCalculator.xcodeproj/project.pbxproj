@@ -23,41 +23,18 @@
 		26875FD31EA6186F00D3A85B /* WZZSingleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26875FD21EA6186F00D3A85B /* WZZSingleManager.m */; };
 		26875FE51EA62F6D00D3A85B /* WZZLoadJSVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 26875FE31EA62F6D00D3A85B /* WZZLoadJSVC.m */; };
 		26875FE61EA62F6D00D3A85B /* WZZLoadJSVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26875FE41EA62F6D00D3A85B /* WZZLoadJSVC.xib */; };
+		5210897A22E6E98A00885A16 /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5210897922E6E98A00885A16 /* HomeVC.m */; };
 		716F26E61EF6A5FA0085C839 /* WZZWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 716F26E21EF6A5FA0085C839 /* WZZWebVC.m */; };
 		716F26E71EF6A5FA0085C839 /* WZZWebVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 716F26E31EF6A5FA0085C839 /* WZZWebVC.xib */; };
 		716F26EB1EF6ACBF0085C839 /* NSString+WZZURLText.m in Sources */ = {isa = PBXBuildFile; fileRef = 716F26EA1EF6ACBF0085C839 /* NSString+WZZURLText.m */; };
 		71B650F91FBB5239002B9582 /* WZZHttpHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B650F81FBB5239002B9582 /* WZZHttpHandler.m */; };
-		71B651051FBB58AB002B9582 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B650FB1FBB549E002B9582 /* SVRadialGradientLayer.m */; };
-		71B651061FBB58AB002B9582 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B650FE1FBB549E002B9582 /* SVProgressAnimatedView.m */; };
-		71B651071FBB58AB002B9582 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B651011FBB549E002B9582 /* SVProgressHUD.m */; };
-		71B651081FBB58AB002B9582 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B651021FBB549E002B9582 /* SVIndefiniteAnimatedView.m */; };
-		71B651091FBB58AB002B9582 /* WZZHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B650F61FBB5225002B9582 /* WZZHttpTool.m */; };
-		71B6510A1FBB58AB002B9582 /* WZZOCH5Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B650C71FBB4F5B002B9582 /* WZZOCH5Manager.m */; };
-		71B6510B1FBB58AB002B9582 /* WZZOCH5VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B650CA1FBB4F5B002B9582 /* WZZOCH5VC.m */; };
-		71B6510C1FBB58AB002B9582 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B650F31FBB4F5B002B9582 /* SSZipArchive.m */; };
 		71B651141FBB5A2A002B9582 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B651101FBB5949002B9582 /* libz.tbd */; };
-		71B651161FBB5B1E002B9582 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71B651031FBB549E002B9582 /* SVProgressHUD.bundle */; };
-		71B651171FBB5C4D002B9582 /* crypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650CE1FBB4F5B002B9582 /* crypt.c */; };
-		71B651181FBB5C4D002B9582 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650CF1FBB4F5B002B9582 /* unzip.c */; };
-		71B651191FBB5C4D002B9582 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650D01FBB4F5B002B9582 /* zip.c */; };
-		71B6511A1FBB5C4D002B9582 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650D21FBB4F5B002B9582 /* ioapi.c */; };
-		71B6511B1FBB5C4D002B9582 /* ioapi_buf.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650D41FBB4F5B002B9582 /* ioapi_buf.c */; };
-		71B6511C1FBB5C4D002B9582 /* ioapi_mem.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650D81FBB4F5B002B9582 /* ioapi_mem.c */; };
-		71B6511D1FBB5C4D002B9582 /* minishared.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650D91FBB4F5B002B9582 /* minishared.c */; };
-		71B6511E1FBB5C4D002B9582 /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650DF1FBB4F5B002B9582 /* aeskey.c */; };
-		71B6511F1FBB5C4D002B9582 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650E01FBB4F5B002B9582 /* hmac.c */; };
-		71B651201FBB5C4D002B9582 /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650E31FBB4F5B002B9582 /* aescrypt.c */; };
-		71B651211FBB5C4D002B9582 /* fileenc.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650E41FBB4F5B002B9582 /* fileenc.c */; };
-		71B651221FBB5C4D002B9582 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650E61FBB4F5B002B9582 /* sha1.c */; };
-		71B651231FBB5C4D002B9582 /* aes_ni.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650E91FBB4F5B002B9582 /* aes_ni.c */; };
-		71B651241FBB5C4D002B9582 /* prng.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650EB1FBB4F5B002B9582 /* prng.c */; };
-		71B651251FBB5C4D002B9582 /* pwd2key.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650ED1FBB4F5B002B9582 /* pwd2key.c */; };
-		71B651261FBB5C4D002B9582 /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = 71B650EE1FBB4F5B002B9582 /* aestab.c */; };
 		71CE78221F7E9556004DA8D0 /* WZZOtherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CE78201F7E9556004DA8D0 /* WZZOtherVC.m */; };
 		71CE78231F7E9556004DA8D0 /* WZZOtherVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CE78211F7E9556004DA8D0 /* WZZOtherVC.xib */; };
 		C5A068391FAC557000C0136A /* WZZTimeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A068371FAC554C00C0136A /* WZZTimeHandler.m */; };
 		C5A97C9A1FA3077E003DE86B /* WZZTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A97C981FA3077E003DE86B /* WZZTimeVC.m */; };
 		C5A97C9B1FA3077E003DE86B /* WZZTimeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A97C991FA3077E003DE86B /* WZZTimeVC.xib */; };
+		E81F0CEBCA307C29CB217C4E /* libPods-GeneralTarget-WZZDeveloperCalculator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D21E6A93989E065DA068DD79 /* libPods-GeneralTarget-WZZDeveloperCalculator.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,67 +85,17 @@
 		26875FE21EA62F6D00D3A85B /* WZZLoadJSVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZLoadJSVC.h; sourceTree = "<group>"; };
 		26875FE31EA62F6D00D3A85B /* WZZLoadJSVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZLoadJSVC.m; sourceTree = "<group>"; };
 		26875FE41EA62F6D00D3A85B /* WZZLoadJSVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZZLoadJSVC.xib; sourceTree = "<group>"; };
+		5210897822E6E98A00885A16 /* HomeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
+		5210897922E6E98A00885A16 /* HomeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
+		5F26545FCDDE7830A10660B3 /* Pods-GeneralTarget-WZZDeveloperCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralTarget-WZZDeveloperCalculator.debug.xcconfig"; path = "Target Support Files/Pods-GeneralTarget-WZZDeveloperCalculator/Pods-GeneralTarget-WZZDeveloperCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		640D1AFAA5E05FEAAE91AEBE /* Pods-GeneralTarget-WZZDeveloperCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeneralTarget-WZZDeveloperCalculator.release.xcconfig"; path = "Target Support Files/Pods-GeneralTarget-WZZDeveloperCalculator/Pods-GeneralTarget-WZZDeveloperCalculator.release.xcconfig"; sourceTree = "<group>"; };
 		716F26E11EF6A5FA0085C839 /* WZZWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZWebVC.h; sourceTree = "<group>"; };
 		716F26E21EF6A5FA0085C839 /* WZZWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WZZWebVC.m; sourceTree = "<group>"; };
 		716F26E31EF6A5FA0085C839 /* WZZWebVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WZZWebVC.xib; sourceTree = "<group>"; };
 		716F26E91EF6ACBF0085C839 /* NSString+WZZURLText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+WZZURLText.h"; sourceTree = "<group>"; };
 		716F26EA1EF6ACBF0085C839 /* NSString+WZZURLText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+WZZURLText.m"; sourceTree = "<group>"; };
-		71B650C71FBB4F5B002B9582 /* WZZOCH5Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZOCH5Manager.m; sourceTree = "<group>"; };
-		71B650C81FBB4F5B002B9582 /* WZZOCH5VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZOCH5VC.h; sourceTree = "<group>"; };
-		71B650C91FBB4F5B002B9582 /* WZZOCH5Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZOCH5Manager.h; sourceTree = "<group>"; };
-		71B650CA1FBB4F5B002B9582 /* WZZOCH5VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZOCH5VC.m; sourceTree = "<group>"; };
-		71B650CC1FBB4F5B002B9582 /* ZipArchive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
-		71B650CE1FBB4F5B002B9582 /* crypt.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = crypt.c; sourceTree = "<group>"; };
-		71B650CF1FBB4F5B002B9582 /* unzip.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
-		71B650D01FBB4F5B002B9582 /* zip.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
-		71B650D11FBB4F5B002B9582 /* minishared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = minishared.h; sourceTree = "<group>"; };
-		71B650D21FBB4F5B002B9582 /* ioapi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
-		71B650D31FBB4F5B002B9582 /* ioapi_mem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ioapi_mem.h; sourceTree = "<group>"; };
-		71B650D41FBB4F5B002B9582 /* ioapi_buf.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ioapi_buf.c; sourceTree = "<group>"; };
-		71B650D51FBB4F5B002B9582 /* crypt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
-		71B650D61FBB4F5B002B9582 /* zip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
-		71B650D71FBB4F5B002B9582 /* unzip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
-		71B650D81FBB4F5B002B9582 /* ioapi_mem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = ioapi_mem.c; sourceTree = "<group>"; };
-		71B650D91FBB4F5B002B9582 /* minishared.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = minishared.c; sourceTree = "<group>"; };
-		71B650DA1FBB4F5B002B9582 /* ioapi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
-		71B650DB1FBB4F5B002B9582 /* ioapi_buf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ioapi_buf.h; sourceTree = "<group>"; };
-		71B650DD1FBB4F5B002B9582 /* prng.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = prng.h; sourceTree = "<group>"; };
-		71B650DE1FBB4F5B002B9582 /* aes_ni.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aes_ni.h; sourceTree = "<group>"; };
-		71B650DF1FBB4F5B002B9582 /* aeskey.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aeskey.c; sourceTree = "<group>"; };
-		71B650E01FBB4F5B002B9582 /* hmac.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
-		71B650E11FBB4F5B002B9582 /* aestab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aestab.h; sourceTree = "<group>"; };
-		71B650E21FBB4F5B002B9582 /* pwd2key.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pwd2key.h; sourceTree = "<group>"; };
-		71B650E31FBB4F5B002B9582 /* aescrypt.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aescrypt.c; sourceTree = "<group>"; };
-		71B650E41FBB4F5B002B9582 /* fileenc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fileenc.c; sourceTree = "<group>"; };
-		71B650E51FBB4F5B002B9582 /* aesopt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aesopt.h; sourceTree = "<group>"; };
-		71B650E61FBB4F5B002B9582 /* sha1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
-		71B650E71FBB4F5B002B9582 /* brg_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = brg_types.h; sourceTree = "<group>"; };
-		71B650E81FBB4F5B002B9582 /* hmac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
-		71B650E91FBB4F5B002B9582 /* aes_ni.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aes_ni.c; sourceTree = "<group>"; };
-		71B650EA1FBB4F5B002B9582 /* brg_endian.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = brg_endian.h; sourceTree = "<group>"; };
-		71B650EB1FBB4F5B002B9582 /* prng.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = prng.c; sourceTree = "<group>"; };
-		71B650EC1FBB4F5B002B9582 /* aes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
-		71B650ED1FBB4F5B002B9582 /* pwd2key.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = pwd2key.c; sourceTree = "<group>"; };
-		71B650EE1FBB4F5B002B9582 /* aestab.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aestab.c; sourceTree = "<group>"; };
-		71B650EF1FBB4F5B002B9582 /* sha1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
-		71B650F01FBB4F5B002B9582 /* fileenc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fileenc.h; sourceTree = "<group>"; };
-		71B650F11FBB4F5B002B9582 /* SSZipArchive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
-		71B650F21FBB4F5B002B9582 /* SSZipCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSZipCommon.h; sourceTree = "<group>"; };
-		71B650F31FBB4F5B002B9582 /* SSZipArchive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
-		71B650F51FBB5225002B9582 /* WZZHttpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZHttpTool.h; sourceTree = "<group>"; };
-		71B650F61FBB5225002B9582 /* WZZHttpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZHttpTool.m; sourceTree = "<group>"; };
 		71B650F71FBB5239002B9582 /* WZZHttpHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZHttpHandler.h; sourceTree = "<group>"; };
 		71B650F81FBB5239002B9582 /* WZZHttpHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZHttpHandler.m; sourceTree = "<group>"; };
-		71B650FB1FBB549E002B9582 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
-		71B650FC1FBB549E002B9582 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		71B650FD1FBB549E002B9582 /* SVProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		71B650FE1FBB549E002B9582 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
-		71B650FF1FBB549E002B9582 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
-		71B651001FBB549E002B9582 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
-		71B651011FBB549E002B9582 /* SVProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		71B651021FBB549E002B9582 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		71B651031FBB549E002B9582 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		71B651041FBB549E002B9582 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
 		71B651101FBB5949002B9582 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		71B651121FBB597B002B9582 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		71CE781F1F7E9556004DA8D0 /* WZZOtherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZZOtherVC.h; sourceTree = "<group>"; };
@@ -180,6 +107,7 @@
 		C5A97C971FA3077E003DE86B /* WZZTimeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZZTimeVC.h; sourceTree = "<group>"; };
 		C5A97C981FA3077E003DE86B /* WZZTimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZZTimeVC.m; sourceTree = "<group>"; };
 		C5A97C991FA3077E003DE86B /* WZZTimeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WZZTimeVC.xib; sourceTree = "<group>"; };
+		D21E6A93989E065DA068DD79 /* libPods-GeneralTarget-WZZDeveloperCalculator.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GeneralTarget-WZZDeveloperCalculator.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71B651141FBB5A2A002B9582 /* libz.tbd in Frameworks */,
+				E81F0CEBCA307C29CB217C4E /* libPods-GeneralTarget-WZZDeveloperCalculator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +145,7 @@
 				265F59311E8F492400B88CA6 /* WZZDeveloperCalculatorUITests */,
 				265F590B1E8F492300B88CA6 /* Products */,
 				71B6510F1FBB5949002B9582 /* Frameworks */,
+				985D1DFB230231DC204F49F4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,6 +162,7 @@
 		265F590C1E8F492300B88CA6 /* WZZDeveloperCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				5210897522E6E95000885A16 /* Class */,
 				C5A97C951FA30765003DE86B /* 时间戳 */,
 				71CE781D1F7E9540004DA8D0 /* 其他 */,
 				716F26DA1EF6A5A30085C839 /* 网页浏览器 */,
@@ -305,9 +236,7 @@
 		26875FCF1EA6185E00D3A85B /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				71B650FA1FBB549E002B9582 /* SVProgressHUD */,
 				71B650F41FBB5225002B9582 /* WZZHttpTool */,
-				71B650C61FBB4F5B002B9582 /* WZZOCH5 */,
 				C5A068361FAC554C00C0136A /* 时间 */,
 				716F26E81EF6ACB80085C839 /* 网址识别 */,
 				26875FD01EA6185E00D3A85B /* 单例 */,
@@ -342,6 +271,31 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		5210897522E6E95000885A16 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				5210897622E6E95000885A16 /* 首页 */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		5210897622E6E95000885A16 /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				5210897722E6E96400885A16 /* Controller */,
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		5210897722E6E96400885A16 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5210897822E6E98A00885A16 /* HomeVC.h */,
+				5210897922E6E98A00885A16 /* HomeVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		716F26DA1EF6A5A30085C839 /* 网页浏览器 */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,105 +323,13 @@
 			path = "网址识别";
 			sourceTree = "<group>";
 		};
-		71B650C61FBB4F5B002B9582 /* WZZOCH5 */ = {
-			isa = PBXGroup;
-			children = (
-				71B650C91FBB4F5B002B9582 /* WZZOCH5Manager.h */,
-				71B650C71FBB4F5B002B9582 /* WZZOCH5Manager.m */,
-				71B650C81FBB4F5B002B9582 /* WZZOCH5VC.h */,
-				71B650CA1FBB4F5B002B9582 /* WZZOCH5VC.m */,
-				71B650CB1FBB4F5B002B9582 /* SSZipArchive */,
-			);
-			path = WZZOCH5;
-			sourceTree = "<group>";
-		};
-		71B650CB1FBB4F5B002B9582 /* SSZipArchive */ = {
-			isa = PBXGroup;
-			children = (
-				71B650CC1FBB4F5B002B9582 /* ZipArchive.h */,
-				71B650CD1FBB4F5B002B9582 /* minizip */,
-				71B650F11FBB4F5B002B9582 /* SSZipArchive.h */,
-				71B650F21FBB4F5B002B9582 /* SSZipCommon.h */,
-				71B650F31FBB4F5B002B9582 /* SSZipArchive.m */,
-			);
-			path = SSZipArchive;
-			sourceTree = "<group>";
-		};
-		71B650CD1FBB4F5B002B9582 /* minizip */ = {
-			isa = PBXGroup;
-			children = (
-				71B650CE1FBB4F5B002B9582 /* crypt.c */,
-				71B650CF1FBB4F5B002B9582 /* unzip.c */,
-				71B650D01FBB4F5B002B9582 /* zip.c */,
-				71B650D11FBB4F5B002B9582 /* minishared.h */,
-				71B650D21FBB4F5B002B9582 /* ioapi.c */,
-				71B650D31FBB4F5B002B9582 /* ioapi_mem.h */,
-				71B650D41FBB4F5B002B9582 /* ioapi_buf.c */,
-				71B650D51FBB4F5B002B9582 /* crypt.h */,
-				71B650D61FBB4F5B002B9582 /* zip.h */,
-				71B650D71FBB4F5B002B9582 /* unzip.h */,
-				71B650D81FBB4F5B002B9582 /* ioapi_mem.c */,
-				71B650D91FBB4F5B002B9582 /* minishared.c */,
-				71B650DA1FBB4F5B002B9582 /* ioapi.h */,
-				71B650DB1FBB4F5B002B9582 /* ioapi_buf.h */,
-				71B650DC1FBB4F5B002B9582 /* aes */,
-			);
-			path = minizip;
-			sourceTree = "<group>";
-		};
-		71B650DC1FBB4F5B002B9582 /* aes */ = {
-			isa = PBXGroup;
-			children = (
-				71B650DD1FBB4F5B002B9582 /* prng.h */,
-				71B650DE1FBB4F5B002B9582 /* aes_ni.h */,
-				71B650DF1FBB4F5B002B9582 /* aeskey.c */,
-				71B650E01FBB4F5B002B9582 /* hmac.c */,
-				71B650E11FBB4F5B002B9582 /* aestab.h */,
-				71B650E21FBB4F5B002B9582 /* pwd2key.h */,
-				71B650E31FBB4F5B002B9582 /* aescrypt.c */,
-				71B650E41FBB4F5B002B9582 /* fileenc.c */,
-				71B650E51FBB4F5B002B9582 /* aesopt.h */,
-				71B650E61FBB4F5B002B9582 /* sha1.c */,
-				71B650E71FBB4F5B002B9582 /* brg_types.h */,
-				71B650E81FBB4F5B002B9582 /* hmac.h */,
-				71B650E91FBB4F5B002B9582 /* aes_ni.c */,
-				71B650EA1FBB4F5B002B9582 /* brg_endian.h */,
-				71B650EB1FBB4F5B002B9582 /* prng.c */,
-				71B650EC1FBB4F5B002B9582 /* aes.h */,
-				71B650ED1FBB4F5B002B9582 /* pwd2key.c */,
-				71B650EE1FBB4F5B002B9582 /* aestab.c */,
-				71B650EF1FBB4F5B002B9582 /* sha1.h */,
-				71B650F01FBB4F5B002B9582 /* fileenc.h */,
-			);
-			path = aes;
-			sourceTree = "<group>";
-		};
 		71B650F41FBB5225002B9582 /* WZZHttpTool */ = {
 			isa = PBXGroup;
 			children = (
-				71B650F51FBB5225002B9582 /* WZZHttpTool.h */,
-				71B650F61FBB5225002B9582 /* WZZHttpTool.m */,
 				71B650F71FBB5239002B9582 /* WZZHttpHandler.h */,
 				71B650F81FBB5239002B9582 /* WZZHttpHandler.m */,
 			);
 			path = WZZHttpTool;
-			sourceTree = "<group>";
-		};
-		71B650FA1FBB549E002B9582 /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				71B650FB1FBB549E002B9582 /* SVRadialGradientLayer.m */,
-				71B650FC1FBB549E002B9582 /* SVIndefiniteAnimatedView.h */,
-				71B650FD1FBB549E002B9582 /* SVProgressHUD.h */,
-				71B650FE1FBB549E002B9582 /* SVProgressAnimatedView.m */,
-				71B650FF1FBB549E002B9582 /* SVProgressHUD-Prefix.pch */,
-				71B651001FBB549E002B9582 /* SVRadialGradientLayer.h */,
-				71B651011FBB549E002B9582 /* SVProgressHUD.m */,
-				71B651021FBB549E002B9582 /* SVIndefiniteAnimatedView.m */,
-				71B651031FBB549E002B9582 /* SVProgressHUD.bundle */,
-				71B651041FBB549E002B9582 /* SVProgressAnimatedView.h */,
-			);
-			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		71B6510F1FBB5949002B9582 /* Frameworks */ = {
@@ -475,6 +337,7 @@
 			children = (
 				71B651121FBB597B002B9582 /* libbz2.tbd */,
 				71B651101FBB5949002B9582 /* libz.tbd */,
+				D21E6A93989E065DA068DD79 /* libPods-GeneralTarget-WZZDeveloperCalculator.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -495,6 +358,15 @@
 				71CE78211F7E9556004DA8D0 /* WZZOtherVC.xib */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		985D1DFB230231DC204F49F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5F26545FCDDE7830A10660B3 /* Pods-GeneralTarget-WZZDeveloperCalculator.debug.xcconfig */,
+				640D1AFAA5E05FEAAE91AEBE /* Pods-GeneralTarget-WZZDeveloperCalculator.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		C5A068361FAC554C00C0136A /* 时间 */ = {
@@ -531,9 +403,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 265F59371E8F492400B88CA6 /* Build configuration list for PBXNativeTarget "WZZDeveloperCalculator" */;
 			buildPhases = (
+				62E9698341184BF4E046C6EC /* [CP] Check Pods Manifest.lock */,
 				265F59061E8F492300B88CA6 /* Sources */,
 				265F59071E8F492300B88CA6 /* Frameworks */,
 				265F59081E8F492300B88CA6 /* Resources */,
+				946126017E8A4066617598E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -591,7 +465,8 @@
 				TargetAttributes = {
 					265F59091E8F492300B88CA6 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = GMLKLDG682;
+						ProvisioningStyle = Automatic;
 					};
 					265F59221E8F492400B88CA6 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -630,7 +505,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71B651161FBB5B1E002B9582 /* SVProgressHUD.bundle in Resources */,
 				265F59441E8F4B2C00B88CA6 /* WZZLiveCollectionCell.xib in Resources */,
 				C5A97C9B1FA3077E003DE86B /* WZZTimeVC.xib in Resources */,
 				265F591A1E8F492300B88CA6 /* Assets.xcassets in Resources */,
@@ -658,40 +532,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		62E9698341184BF4E046C6EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GeneralTarget-WZZDeveloperCalculator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		946126017E8A4066617598E4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeneralTarget-WZZDeveloperCalculator/Pods-GeneralTarget-WZZDeveloperCalculator-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeneralTarget-WZZDeveloperCalculator/Pods-GeneralTarget-WZZDeveloperCalculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		265F59061E8F492300B88CA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71B651171FBB5C4D002B9582 /* crypt.c in Sources */,
-				71B651181FBB5C4D002B9582 /* unzip.c in Sources */,
-				71B651191FBB5C4D002B9582 /* zip.c in Sources */,
-				71B6511A1FBB5C4D002B9582 /* ioapi.c in Sources */,
-				71B6511B1FBB5C4D002B9582 /* ioapi_buf.c in Sources */,
-				71B6511C1FBB5C4D002B9582 /* ioapi_mem.c in Sources */,
-				71B6511D1FBB5C4D002B9582 /* minishared.c in Sources */,
-				71B6511E1FBB5C4D002B9582 /* aeskey.c in Sources */,
-				71B6511F1FBB5C4D002B9582 /* hmac.c in Sources */,
-				71B651201FBB5C4D002B9582 /* aescrypt.c in Sources */,
-				71B651211FBB5C4D002B9582 /* fileenc.c in Sources */,
-				71B651221FBB5C4D002B9582 /* sha1.c in Sources */,
-				71B651231FBB5C4D002B9582 /* aes_ni.c in Sources */,
-				71B651241FBB5C4D002B9582 /* prng.c in Sources */,
-				71B651251FBB5C4D002B9582 /* pwd2key.c in Sources */,
-				71B651261FBB5C4D002B9582 /* aestab.c in Sources */,
-				71B651051FBB58AB002B9582 /* SVRadialGradientLayer.m in Sources */,
-				71B651061FBB58AB002B9582 /* SVProgressAnimatedView.m in Sources */,
-				71B651071FBB58AB002B9582 /* SVProgressHUD.m in Sources */,
-				71B651081FBB58AB002B9582 /* SVIndefiniteAnimatedView.m in Sources */,
-				71B651091FBB58AB002B9582 /* WZZHttpTool.m in Sources */,
-				71B6510A1FBB58AB002B9582 /* WZZOCH5Manager.m in Sources */,
-				71B6510B1FBB58AB002B9582 /* WZZOCH5VC.m in Sources */,
-				71B6510C1FBB58AB002B9582 /* SSZipArchive.m in Sources */,
 				C5A068391FAC557000C0136A /* WZZTimeHandler.m in Sources */,
 				71B650F91FBB5239002B9582 /* WZZHttpHandler.m in Sources */,
 				2647A4C11E9B9349000482F4 /* WZZSelectView.m in Sources */,
 				265F59151E8F492300B88CA6 /* ViewController.m in Sources */,
 				265F59431E8F4B2C00B88CA6 /* WZZLiveCollectionCell.m in Sources */,
+				5210897A22E6E98A00885A16 /* HomeVC.m in Sources */,
 				26875FE51EA62F6D00D3A85B /* WZZLoadJSVC.m in Sources */,
 				26875FCB1EA5F17E00D3A85B /* JSViewController.m in Sources */,
 				C5A97C9A1FA3077E003DE86B /* WZZTimeVC.m in Sources */,
@@ -840,18 +742,20 @@
 		};
 		265F59381E8F492400B88CA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F26545FCDDE7830A10660B3 /* Pods-GeneralTarget-WZZDeveloperCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GMLKLDG682;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/WZZDeveloperCalculator/Tool/WZZOCH5";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WZZDeveloperCalculator/PrefixHeader.pch";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = WZZDeveloperCalculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.cal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -863,23 +767,25 @@
 		};
 		265F59391E8F492400B88CA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 640D1AFAA5E05FEAAE91AEBE /* Pods-GeneralTarget-WZZDeveloperCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GMLKLDG682;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/WZZDeveloperCalculator/Tool/WZZOCH5";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WZZDeveloperCalculator/PrefixHeader.pch";
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = WZZDeveloperCalculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wzz.cal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fe5495cf-1ac5-4474-9aab-5395e58242b0";
-				PROVISIONING_PROFILE_SPECIFIER = calAppstore;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

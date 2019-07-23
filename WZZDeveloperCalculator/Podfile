@@ -1,0 +1,27 @@
+platform :ios, '9.3'
+
+abstract_target 'GeneralTarget' do
+    # 常用框架
+    pod 'AFNetworking', '~> 3.2.1' #网络请求
+    pod 'SDWebImage', '~> 4.3.3' #加载网络图片
+    pod 'IQKeyboardManager', '~> 6.0.3' #自动管理键盘
+    pod 'SVProgressHUD', '~> 2.2.5' #提示框
+    pod 'SDCycleScrollView', '~> 1.75' #轮播图
+    pod 'MJRefresh', '~> 3.1.15.3' #刷新加载
+    pod 'MJExtension', '~> 3.0.13' #json转model
+    pod 'Masonry', '~> 1.1.0' #布局
+    pod 'JPush' #极光
+    pod 'ReactiveObjC', '~> 3.1.1'
+    
+    # wzz工具
+    pod 'WZZSecret', '~> 1.0.5' #加密处理工具
+    pod 'WZZAlertView', '~> 1.0.5' #仿系统弹框
+    pod 'WZZBaseTool'
+    
+    pod 'WZZAFHttpTool'
+    
+    target 'WZZDeveloperCalculator' do
+      
+    end
+
+end

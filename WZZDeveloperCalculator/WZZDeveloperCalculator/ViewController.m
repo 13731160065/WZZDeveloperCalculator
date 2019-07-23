@@ -15,8 +15,6 @@
 #import "WZZWebVC.h"
 #import "WZZTimeVC.h"
 #import "WZZHttpHandler.h"
-#import "WZZOCH5Manager.h"
-#import "WZZOCH5VC.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -107,42 +105,6 @@
     [mainCollectionView registerNib:[UINib nibWithNibName:@"WZZLiveCollectionCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     [mainCollectionView setShowsVerticalScrollIndicator:NO];
     [mainCollectionView setShowsHorizontalScrollIndicator:NO];
-    
-#if 0
-    //检查更新
-    [SVProgressHUD showWithStatus:@"正在检查包内容"];
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
-    [WZZHttpHandler checkZipVersion:^(NSString *zipVersion) {
-        //拆分版本号
-        NSInteger severVersion = [[[zipVersion componentsSeparatedByString:@"."] componentsJoinedByString:@""] integerValue];
-        NSInteger localVersion = [[[[WZZOCH5Manager getVersion] componentsSeparatedByString:@"."] componentsJoinedByString:@""] integerValue];
-        
-        //更新扩展模块
-        [WZZHttpHandler getExternFunc:^(NSArray *resp) {
-            extArr = [NSMutableArray arrayWithArray:resp];
-            //对比版本号
-            if (localVersion < severVersion) {
-                //更新压缩包
-                [WZZHttpHandler updateZip:^{
-                    [SVProgressHUD dismiss];
-                    [SVProgressHUD showSuccessWithStatus:@"检测完成"];
-                } fb:^(NSError *httpError) {
-                    [SVProgressHUD dismiss];
-                    [SVProgressHUD showErrorWithStatus:@"加载压缩包失败"];
-                }];
-            } else {
-                [SVProgressHUD dismiss];
-                [SVProgressHUD showSuccessWithStatus:@"检测完成"];
-            }
-        } fb:^(NSError *httpError) {
-            [SVProgressHUD dismiss];
-            [SVProgressHUD showErrorWithStatus:@"加载扩展模块失败"];
-        }];
-    } fb:^(NSError *httpError) {
-        [SVProgressHUD dismiss];
-        [SVProgressHUD showErrorWithStatus:@"加载检查内容失败"];
-    }];
-#endif
 }
 
 //加载数据
@@ -207,13 +169,6 @@
     }
     //快速获取数字列表
     [WZZSelectView showWithRect:CGRectMake(0, CGRectGetMaxY(showView.frame), kScreenWidth, selectHeight) dataArr:allArr selectBlock:^(NSString * selectStr) {
-        
-        //OCH5代码
-        if ([extArr containsObject:selectStr]) {
-            WZZOCH5VC * och5VC = [[WZZOCH5VC alloc] init];
-            och5VC.url = [NSString stringWithFormat:@"wzzoch5://index.html?funcName=%@", selectStr];
-            [self presentViewController:och5VC animated:YES completion:nil];
-        }
         
         //时间戳
         if ([selectStr isEqualToString:@"当前时间戳"]) {
